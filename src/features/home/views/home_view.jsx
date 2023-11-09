@@ -1,9 +1,16 @@
 import React from 'react';
+import { useAuth } from '../../../core/auth/hook/use_auth';
 
-const homeView = () => {
+const HomeView = () => {
+
+    const { isLoggedIn, logout } = useAuth();
+
     return (
-        <h1>HOME VIEW</h1>
+        <>
+            <h1>HOME VIEW</h1>
+            <button onClick={ logout }>CERRAR SESIÓN</button>
+        </>
     )
 }
 
-export default homeView;
+export default HomeView;

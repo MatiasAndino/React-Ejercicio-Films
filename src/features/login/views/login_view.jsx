@@ -1,9 +1,16 @@
 import React from 'react';
+import { useAuth } from '../../../core/auth/hook/use_auth';
 
-const loginView = () => {
+const LoginView = () => {
+
+    const { login } = useAuth();
+
     return (
-        <h1>LOGIN VIEW</h1>
+        <>
+            <h1>LOGIN VIEW</h1>
+            <button onClick={ login }>INICIAR SESIÓN</button>
+        </>
     )
 }
 
-export default loginView;
+export default LoginView;
