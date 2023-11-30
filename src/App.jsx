@@ -9,13 +9,14 @@ function App() {
 
   return (
     <>
-      <RootProvider>
-        <RouterProvider 
-          router={ appRouter }
-        />
-      </RootProvider>
+      <div className="bg-dark text-light">
+        <RootProvider>
+          <RouterProvider 
+            router={ appRouter }
+          />
+        </RootProvider>
+      </div>
     </>
-
   )
 }
 

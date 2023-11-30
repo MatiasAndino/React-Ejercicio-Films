@@ -8,7 +8,7 @@ const LoginView = () => {
     return (
         <>
             <h1>LOGIN VIEW</h1>
-            <button onClick={ login }>INICIAR SESIÓN</button>
+            <button className='btn btn-outline-primary' onClick={ login }>INICIAR SESIÓN</button>
         </>
     )
 }

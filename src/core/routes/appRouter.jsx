@@ -17,7 +17,7 @@ export const appRouter = createBrowserRouter([
         path: '/login',
         element: (
             <PublicRoute>
-                <LoginView />,
+                <LoginView />
             </PublicRoute>
         )
     }
