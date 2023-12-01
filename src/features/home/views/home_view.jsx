@@ -1,10 +1,11 @@
 import React from 'react';
 import { useAuth } from '../../../core/auth/hook/use_auth';
-import Carrusel from '../../../core/media/components/Carrusel';
+import Carrusel from '../../../core/carrusel/Carrusel';
 
 import {
     getPopularMovies,
     getTopRatedMovies,
+    getUpcomingMovies,
   } from "../services/movies.services";
 
 import useSWR from 'swr';
@@ -22,21 +23,26 @@ const HomeView = () => {
       } = useSWR("getPopularMovies", getPopularMovies);
     
       const {
-        data: topRatedMovies,
+        data: upComingMovies,
         error: topRatedMoviesError,
         isLoading: topRatedMoviesIsLoading,
-      } = useSWR("getTopRatedMovies", getTopRatedMovies);
+      } = useSWR("getTopRatedMovies", getUpcomingMovies);
       
       
+      console.log()
 
     return (
-        <>
+        <div className='bg-dark'>
+
             <h1>HOME VIEW</h1>
             <button className='btn btn-outline-danger' onClick={logout}>CERRAR SESIÓN</button>
 
-            
 
-        </>
+
+            <Carrusel data={ popularMovies } titulo='Popular Movies' />
+            <Carrusel data={ upComingMovies } titulo='Rated Movies' />
+
+        </div>
     )
 }
 
