@@ -34,7 +34,16 @@ const Carrusel = ({ titulo, data }) => {
         const elements = [];
 
         for (let index = 0; index < iteraciones; index++) {
-            elements.push(newImagenes.slice(index * items, (index + 1) * items));
+            const inicio = index * items;
+            const fin = (index + 1) * items;
+            if ((index === iteraciones - 1) && (total % items !== 0)) {
+                const rest = (items - total % items);
+                const newInicio = inicio - rest;
+                elements.push(newImagenes.slice(newInicio));
+                console.log('ENTRA O NO ENTRA LA PUTA QUE LO RE MIL PARIO')
+                break;
+            }
+            elements.push(newImagenes.slice(inicio, fin));
         }
 
         const updatedCarouselContent = elements.map((element, index) => {

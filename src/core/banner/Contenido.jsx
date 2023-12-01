@@ -13,9 +13,7 @@ const Contenido = ({ parent, data }) => {
 
     */
 
-    console.log(parent)
-
-    return (
+        return (
         <div>
             <div className="position-relative mb-2">
                 {

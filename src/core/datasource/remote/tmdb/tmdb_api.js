@@ -41,5 +41,18 @@ export const tmdb_paths = {
       },
       url: "https://image.tmdb.org/t/p",
     },
+    logos: {
+      sizes: {
+        w300: "/w300",
+        w780: "/w780",
+        w1280: "/w1280",
+        original: "/original",
+      },
+      url: "https://image.tmdb.org/t/p",
+    },
   },
 };
+
+
+//LOGOS
+//https://www.themoviedb.org/talk/5b8effd792514173b2000bb9?page=2

@@ -8,6 +8,7 @@ export const tdmbMoviesTvAdapter = (response) => {
     title: item.title || item.name,
     poster: `${tmdb_paths.images.poster.url}${tmdb_paths.images.poster.sizes.original}${item.poster_path}`,
     backdrop: `${tmdb_paths.images.backdrop.url}${tmdb_paths.images.backdrop.sizes.w1280}${item.backdrop_path}`,
+    logos: `${tmdb_paths.images.logos.url}${tmdb_paths.images.logos.sizes.original}${item.logos_path}`,
     description: item.overview,
     rating: item.vote_average,
     video: item.video,

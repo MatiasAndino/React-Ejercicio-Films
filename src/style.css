@@ -41,13 +41,13 @@
   
   .cards-wrapper {
     width: 100%;
-    height: 9vw;
+    /* height: 9vw; */
     display: flex;
     justify-content: center;
   }
   
   .card {
-    margin: 0 4px;
+    margin: 0 2px;
     transition-duration: .2s;
     transition-delay: .2s;
     /* min-height:100%; */

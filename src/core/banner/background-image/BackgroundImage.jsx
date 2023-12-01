@@ -11,8 +11,6 @@ const BackgroundImage = ({ parent, src = 'https://occ-0-3791-185.1.nflxso.net/dn
 /* QUITAR gradient-banner-image (tambien quitar el guion a modal) y dejar en el css lo siguiente .gradient-banner-image.modal */
 
 
-  console.log(src)
-
   return (
     <div className='position-relative'>
     {/* <div className='position-relative' style={{height: '100%'}}> */}
