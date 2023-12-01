@@ -54,5 +54,5 @@ export const tmdb_paths = {
 };
 
 
-//LOGOS
+//LOGOS  DE LAS PELICULAS
 //https://www.themoviedb.org/talk/5b8effd792514173b2000bb9?page=2
