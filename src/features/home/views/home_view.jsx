@@ -10,6 +10,7 @@ import {
 
 import useSWR from 'swr';
 import Banner from '../../../core/banner/Banner';
+import usePopularMovies from '../../../core/datasource/remote/tmdb/usePopularMovies';
 
 const HomeView = () => {
 
@@ -17,32 +18,30 @@ const HomeView = () => {
 
 
 
-    const {
-        data: popularMovies,
-        error: popularMoviesError,
-        isLoading: popularMoviesIsLoading,
-    } = useSWR("getPopularMovies", getPopularMovies);
+    // const {
+    //     data: popularMovies,
+    //     error: popularMoviesError,
+    //     isLoading: popularMoviesIsLoading,
+    // } = useSWR("getPopularMovies", getPopularMovies);
 
-    const {
-        data: upComingMovies,
-        error: upComingMoviesError,
-        isLoading: tupComingMoviesIsLoading,
-    } = useSWR("getUpcomingMovies", getUpcomingMovies);
+    // const {
+    //     data: upComingMovies,
+    //     error: upComingMoviesError,
+    //     isLoading: tupComingMoviesIsLoading,
+    // } = useSWR("getUpcomingMovies", getUpcomingMovies);
 
-
-    console.log()
+    const {popularMovies, popularMoviesIsLoading}  = usePopularMovies();
 
     return (
         <div className='bg-dark'>
 
-            <h1>HOME VIEW</h1>
+            {/* <h1>HOME VIEW</h1>
             <button className='btn btn-outline-danger' onClick={logout}>CERRAR SESIÓN</button>
-
+ */}
 
             <Banner parent='HomeView' />
 
-            <Carrusel data={popularMovies} titulo='Popular Movies' />
-            <Carrusel data={upComingMovies} titulo='Rated Movies' />
+            {!popularMoviesIsLoading && <Carrusel data={popularMovies} titulo='Popular Movies' isLoading={popularMoviesIsLoading}/>}
 
         </div>
     )

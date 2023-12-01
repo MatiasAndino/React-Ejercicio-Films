@@ -6,6 +6,7 @@ import Contenido from './Contenido';
 
 import useSWR from 'swr'
 import { getUpcomingMovies } from '../../features/home/services/movies.services';
+import usePopularMovies from '../datasource/remote/tmdb/usePopularMovies';
 
 /*
 
@@ -14,41 +15,29 @@ import { getUpcomingMovies } from '../../features/home/services/movies.services'
 
 */
 const Banner = ({ parent = 'HomeView' }) => {
-    
 
-    const {
-        data: upComingMovies,
-        error: upComingMoviesError,
-        isLoading: tupComingMoviesIsLoading,
-    } = useSWR("getUpcomingMovies", getUpcomingMovies);
 
     const random = Math.floor(Math.random() * 19);
-
-    const [datos, setDatos] = useState('');
-
-    useEffect(() => {
-
-        try {
-            
-        } catch (error) {
-            console.log('BANNER ERROR,',error)
-        }
-
-    },[])
+    const { popularMovies, popularMoviesIsLoading } = usePopularMovies();
 
 
     return (
-        <div className=''>
+        <>
+            {
+                !popularMoviesIsLoading &&
+                < div className='' >
 
-            <div className=''>
-                <BackgroundImage parent={parent} />
-            </div>
+                    <div className=''>
+                        <BackgroundImage parent={parent} src={popularMovies[random].backdrop} />
+                    </div>
 
-            <div className="">
-                <Contenido parent={parent} data={ upComingMovies } />
-                {/* <Contenido parent="MainView" /> */}
-            </div>
-        </div>
+                    <div className="">
+                        <Contenido parent={parent} data={popularMovies} />
+                    </div>
+                </div >
+
+            }
+        </>
     )
 }
 

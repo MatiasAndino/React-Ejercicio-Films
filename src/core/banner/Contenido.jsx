@@ -13,7 +13,7 @@ const Contenido = ({ parent, data }) => {
 
     */
 
-    
+
 
     return (
         <div>
@@ -21,9 +21,9 @@ const Contenido = ({ parent, data }) => {
                 {
                     parent === 'HomeView'
                         ? (
-                            <div className='w-100 position-absolute bottom-0'>
+                            <div className='position-absolute bottom-0'>
                                 {/* <Card titulo='The Office' introduccion='El iluso jefe Michael intenta encauzar el descontento de sus empleados en la empresa papelera Dunder Mifflin a traves de continuas debilidades y percances.' /> */}
-                                <Carrusel data={ data } titulo='Best Movies' />
+                                <Carrusel data={data} titulo='Best Movies' />
                             </div>
                         )
                         :

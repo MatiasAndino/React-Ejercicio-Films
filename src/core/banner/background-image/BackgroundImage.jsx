@@ -4,17 +4,17 @@ const BackgroundImage = ({ parent, src = 'https://occ-0-3791-185.1.nflxso.net/dn
 
   const style = {
     width:'100%',
-    height: 'auto',
+    maxHeight: 'auto',
     zIndex: '1',
   };
 
 /* QUITAR gradient-banner-image (tambien quitar el guion a modal) y dejar en el css lo siguiente .gradient-banner-image.modal */
 
 
-
+  console.log(src)
 
   return (
-    <div className='position-relative' style={{height: '100%'}}>
+    <div className='position-relative'>
     {/* <div className='position-relative' style={{height: '100%'}}> */}
       {/* <img src='src/assets/imagenes/16x9-solid.jpg' className="" alt="..." style={ style }/> */}
       <img src={src} className="rounded" alt="..." style={ style }/>

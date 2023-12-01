@@ -5,15 +5,14 @@ import useIndiceCarrusel from './indice/useIndiceCarrusel';
 import useScreenWidth from '../screen/useScreenWidth';
 const PATH = './src/images/'
 
-const Carrusel = ({ data, titulo }) => {
+const Carrusel = ({ titulo, data }) => {
 
 
     const { screenWidth, items, style } = useScreenWidth();
     const { activeIndex, next, prev, reset } = useIndiceCarrusel();
-    const [imagenes, setImagenes] = useState(null);
 
-    const total = imagenes?.length;
-    const iteraciones = Math.ceil(total / items);
+    const [imagenes, setImagenes] = useState(data);
+
 
     const [carouselContent, setCarouselContent] = useState({ items, content: [] });
     const [modalData, setModalData] = useState("");
@@ -21,52 +20,40 @@ const Carrusel = ({ data, titulo }) => {
     const id = titulo.replaceAll(' ', '_');
     const target = `#${id}`;
 
+    const total = imagenes.length;
+    const iteraciones = Math.ceil(total / items);
+
     useEffect(() => {
-        if (imagenes === null) {
-            console.log('ENTRA')
-            setImagenes(data);
+
+        reset();
+
+        const posicion = carouselContent.items * activeIndex;
+
+        const newImagenes = [...imagenes.slice(posicion), ...imagenes.slice(0, posicion)];
+
+        const elements = [];
+
+        for (let index = 0; index < iteraciones; index++) {
+            elements.push(newImagenes.slice(index * items, (index + 1) * items));
         }
 
-    }, [data, imagenes])
-
-
-    useEffect(() => {
-        console.log('imagenes es igual a ', imagenes)
-        if (!imagenes) return;
-        try {
-            reset();
-
-            const posicion = carouselContent.items * activeIndex;
-
-            const newImagenes = [...imagenes?.slice(posicion), ...imagenes?.slice(0, posicion)];
-
-            const elements = [];
-
-            for (let index = 0; index < iteraciones; index++) {
-                elements.push(newImagenes.slice(index * items, (index + 1) * items));
-            }
-
-            const updatedCarouselContent = elements.map((element, index) => {
-                return (
-                    <div className={`carousel-item ${index === 0 && 'active'}`} key={Math.random() * 100000}>
-                        <div className='cards-wrapper align-items-center' key={Math.random() * 100000} style={{ overflow: 'visible', ...style }}  >
-                            {
-                                element.map((imagen, i) => (
-                                    <Card imagen={imagen} setModalData={setModalData} key={Math.random() * 100000} extra={i === 0 ? 'primero' : i === items - 1 ? 'ultimo' : ''} />
-                                ))
-                            }
-                        </div>
+        const updatedCarouselContent = elements.map((element, index) => {
+            return (
+                <div className={`carousel-item ${index === 0 && 'active'}`} key={Math.random() * 100000}>
+                    <div className='cards-wrapper align-items-center' key={Math.random() * 100000} style={{ overflow: 'visible', ...style }}  >
+                        {
+                            element.map((imagen, i) => (
+                                <Card imagen={imagen} setModalData={setModalData} key={Math.random() * 100000} extra={i === 0 ? 'primero' : i === items - 1 ? 'ultimo' : ''} />
+                            ))
+                        }
                     </div>
-                )
-            })
+                </div>
+            )
+        })
 
-            setCarouselContent({ items, content: updatedCarouselContent });
-            setImagenes(newImagenes);
+        setCarouselContent({ items, content: updatedCarouselContent });
+        setImagenes(newImagenes);
 
-        } catch (error) {
-            console.log('ERROR CARRUSEL,', error)
-
-        }
     }, [screenWidth])
 
 
@@ -75,7 +62,6 @@ const Carrusel = ({ data, titulo }) => {
             <div style={{ height: '30px' }}></div>
             <h2 className='text-light m-2 fs-4 align-text-top'>{titulo}</h2>
             <div id={id} className="carousel slide d-flex justify-content-center">
-                {/* <div id="carouselExample" className="carousel slide d-flex justify-content-center"> */}
                 <div className="carousel-inner" style={{ width: '95%', overflow: 'visible' }} >
                     {
                         carouselContent.content
@@ -101,4 +87,4 @@ const Carrusel = ({ data, titulo }) => {
 
 export default Carrusel;
 
-//CAMBIOS EN LA LINEA 72,73(COMENTADA ORIGINAL)
+/* <div id="carouselExample" className="carousel slide d-flex justify-content-center"> */
