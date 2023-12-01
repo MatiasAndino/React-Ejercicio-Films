@@ -14,12 +14,13 @@ import usePopularMovies from '../datasource/remote/tmdb/usePopularMovies';
     EN EL MODAL HAGA OTRA COSA
 
 */
-const Banner = ({ parent = 'HomeView' }) => {
+const Banner = ({ parent = 'HomeView', src }) => {
 
 
     const random = Math.floor(Math.random() * 19);
     const { popularMovies, popularMoviesIsLoading } = usePopularMovies();
 
+    // popularMovies[random].backdrop
 
     return (
         <>
@@ -28,7 +29,7 @@ const Banner = ({ parent = 'HomeView' }) => {
                 < div className='' >
 
                     <div className=''>
-                        <BackgroundImage parent={parent} src={popularMovies[random].backdrop} />
+                        <BackgroundImage parent={parent} src={src || popularMovies[random].backdrop} />
                     </div>
 
                     <div className="">

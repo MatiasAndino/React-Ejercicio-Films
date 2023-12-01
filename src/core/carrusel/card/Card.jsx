@@ -7,7 +7,7 @@ const PATH = './src/images/'
 const Card = ({ imagen, setModalData, extra }) => {
 
     function openHandleModal() {
-        setModalData(imagen.poster);
+        setModalData(imagen.backdrop);
     }
 
 

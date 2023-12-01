@@ -11,6 +11,7 @@ import {
 import useSWR from 'swr';
 import Banner from '../../../core/banner/Banner';
 import usePopularMovies from '../../../core/datasource/remote/tmdb/usePopularMovies';
+import useTopRatedMovies from '../../../core/datasource/remote/tmdb/useTopRatedMovies';
 
 const HomeView = () => {
 
@@ -31,6 +32,7 @@ const HomeView = () => {
     // } = useSWR("getUpcomingMovies", getUpcomingMovies);
 
     const {popularMovies, popularMoviesIsLoading}  = usePopularMovies();
+    const {topRatedMovies, topRatedMoviesIsLoading}  = useTopRatedMovies();
 
     return (
         <div className='bg-dark'>
@@ -42,6 +44,7 @@ const HomeView = () => {
             <Banner parent='HomeView' />
 
             {!popularMoviesIsLoading && <Carrusel data={popularMovies} titulo='Popular Movies' isLoading={popularMoviesIsLoading}/>}
+            {!topRatedMoviesIsLoading && <Carrusel data={topRatedMovies} titulo='Top Rated Movies' isLoading={topRatedMoviesIsLoading}/>}
 
         </div>
     )
