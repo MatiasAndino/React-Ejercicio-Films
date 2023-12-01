@@ -8,19 +8,8 @@ const BackgroundImage = ({ parent, src = 'https://occ-0-3791-185.1.nflxso.net/dn
     zIndex: '1',
   };
 
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
-/* CAMBIAR -banner en el gradiant por -modal */
+/* QUITAR gradient-banner-image (tambien quitar el guion a modal) y dejar en el css lo siguiente .gradient-banner-image.modal */
+
 
 
 

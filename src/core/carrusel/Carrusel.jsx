@@ -22,11 +22,17 @@ const Carrusel = ({ data, titulo }) => {
     const target = `#${id}`;
 
     useEffect(() => {
-        if (imagenes === null) setImagenes(data);
+        if (imagenes === null) {
+            console.log('ENTRA')
+            setImagenes(data);
+        }
+
     }, [data, imagenes])
 
 
     useEffect(() => {
+        console.log('imagenes es igual a ', imagenes)
+        if (!imagenes) return;
         try {
             reset();
 
@@ -58,7 +64,7 @@ const Carrusel = ({ data, titulo }) => {
             setImagenes(newImagenes);
 
         } catch (error) {
-            console.log('ERROR DE NUEVO')
+            console.log('ERROR CARRUSEL,', error)
 
         }
     }, [screenWidth])

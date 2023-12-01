@@ -6,9 +6,10 @@ import {
     getPopularMovies,
     getTopRatedMovies,
     getUpcomingMovies,
-  } from "../services/movies.services";
+} from "../services/movies.services";
 
 import useSWR from 'swr';
+import Banner from '../../../core/banner/Banner';
 
 const HomeView = () => {
 
@@ -20,16 +21,16 @@ const HomeView = () => {
         data: popularMovies,
         error: popularMoviesError,
         isLoading: popularMoviesIsLoading,
-      } = useSWR("getPopularMovies", getPopularMovies);
-    
-      const {
+    } = useSWR("getPopularMovies", getPopularMovies);
+
+    const {
         data: upComingMovies,
-        error: topRatedMoviesError,
-        isLoading: topRatedMoviesIsLoading,
-      } = useSWR("getTopRatedMovies", getUpcomingMovies);
-      
-      
-      console.log()
+        error: upComingMoviesError,
+        isLoading: tupComingMoviesIsLoading,
+    } = useSWR("getUpcomingMovies", getUpcomingMovies);
+
+
+    console.log()
 
     return (
         <div className='bg-dark'>
@@ -38,9 +39,10 @@ const HomeView = () => {
             <button className='btn btn-outline-danger' onClick={logout}>CERRAR SESIÓN</button>
 
 
+            <Banner parent='HomeView' />
 
-            <Carrusel data={ popularMovies } titulo='Popular Movies' />
-            <Carrusel data={ upComingMovies } titulo='Rated Movies' />
+            <Carrusel data={popularMovies} titulo='Popular Movies' />
+            <Carrusel data={upComingMovies} titulo='Rated Movies' />
 
         </div>
     )

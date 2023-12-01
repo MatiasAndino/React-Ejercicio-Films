@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../card/Card__';
 import Carrusel from '../carrusel/Carrusel';
 import BackgroundImage from './background-image/BackgroundImage';
 import Contenido from './Contenido';
 
+import useSWR from 'swr'
+import { getUpcomingMovies } from '../../features/home/services/movies.services';
 
 /*
 
@@ -11,17 +13,39 @@ import Contenido from './Contenido';
     EN EL MODAL HAGA OTRA COSA
 
 */
-const Banner = ({ parent = 'MainView', src }) => {
-    // const src = 'src/assets/imagenes/16x9-solid.jpg';
+const Banner = ({ parent = 'HomeView' }) => {
+    
+
+    const {
+        data: upComingMovies,
+        error: upComingMoviesError,
+        isLoading: tupComingMoviesIsLoading,
+    } = useSWR("getUpcomingMovies", getUpcomingMovies);
+
+    const random = Math.floor(Math.random() * 19);
+
+    const [datos, setDatos] = useState('');
+
+    useEffect(() => {
+
+        try {
+            
+        } catch (error) {
+            console.log('BANNER ERROR,',error)
+        }
+
+    },[])
+
+
     return (
         <div className=''>
 
             <div className=''>
-                <BackgroundImage parent={parent} src={src} />
+                <BackgroundImage parent={parent} />
             </div>
 
             <div className="">
-                <Contenido parent={parent} />
+                <Contenido parent={parent} data={ upComingMovies } />
                 {/* <Contenido parent="MainView" /> */}
             </div>
         </div>
