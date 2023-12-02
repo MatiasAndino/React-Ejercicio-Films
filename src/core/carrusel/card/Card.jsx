@@ -11,7 +11,7 @@ const Card = ({ imagen, setModalData, extra }) => {
 
 
     return (
-        <div className={`card border border-1 border-black ${extra} `} key={imagen.id} >
+        <div className={`card border border-1 border-black bg-danger ${extra} `} key={imagen.id} >
             <img
                 className='card-img-top'
                 src={imagen.backdrop}
