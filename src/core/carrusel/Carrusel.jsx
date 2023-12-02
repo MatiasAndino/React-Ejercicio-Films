@@ -40,7 +40,6 @@ const Carrusel = ({ titulo, data }) => {
                 const rest = (items - total % items);
                 const newInicio = inicio - rest;
                 elements.push(newImagenes.slice(newInicio));
-                console.log('ENTRA O NO ENTRA LA PUTA QUE LO RE MIL PARIO')
                 break;
             }
             elements.push(newImagenes.slice(inicio, fin));
@@ -86,7 +85,7 @@ const Carrusel = ({ titulo, data }) => {
                 </button>
             </div>
             <Modal>
-                <Modal.BannerModal parent='Banner' src={modalData} />
+                <Modal.BannerModal parent='Banner' movie={modalData} />
                 <Modal.Body />
             </Modal>
         </div>
@@ -97,3 +96,11 @@ const Carrusel = ({ titulo, data }) => {
 export default Carrusel;
 
 /* <div id="carouselExample" className="carousel slide d-flex justify-content-center"> */
+
+/*******    QUITAR EL MODAL DE AQUI!!!!! */
+/*******    QUITAR EL MODAL DE AQUI!!!!! */
+/*******    QUITAR EL MODAL DE AQUI!!!!! */
+/*******    QUITAR EL MODAL DE AQUI!!!!! */
+/*******    QUITAR EL MODAL DE AQUI!!!!! */
+/*******    QUITAR EL MODAL DE AQUI!!!!! */
+/*******    QUITAR EL MODAL DE AQUI!!!!! */

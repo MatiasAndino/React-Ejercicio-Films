@@ -2,6 +2,7 @@ import React from 'react'
 import Carrusel from '../carrusel/Carrusel'
 import Carrusel2 from '../carrusel/Carrusel2'
 import Card from '../card/Card__'
+import Tarjeta from './tarjeta/Tarjeta'
 
 const Contenido = ({ parent, data }) => {
 
@@ -21,7 +22,8 @@ const Contenido = ({ parent, data }) => {
                         ? (
                             <div className='position-absolute bottom-0'>
                                 {/* <Card titulo='The Office' introduccion='El iluso jefe Michael intenta encauzar el descontento de sus empleados en la empresa papelera Dunder Mifflin a traves de continuas debilidades y percances.' /> */}
-                                {/* <Carrusel data={data} titulo='Best Movies' /> */}
+                                {/* <Tarjeta /> */}
+                                <Carrusel data={data} titulo='Best Movies' />
                             </div>
                         )
                         :

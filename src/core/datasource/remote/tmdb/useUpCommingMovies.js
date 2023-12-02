@@ -5,12 +5,12 @@ import { getUpcomingMovies } from "../../../../features/home/services/movies.ser
 const useUpCommingMovies = () => {
 
     const {
-        data: UpcomingMovies,
-        error: UpcomingMoviesError,
+        data: upcomingMovies,
+        error: upcomingMoviesError,
         isLoading: upcomingMoviesIsLoading,
     } = useSWR("getUpcomingMovies", getUpcomingMovies);
 
-    return { UpcomingMovies, upcomingMoviesIsLoading };
+    return { upcomingMovies, upcomingMoviesIsLoading };
 }
 
 export default useUpCommingMovies

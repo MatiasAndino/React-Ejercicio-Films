@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import Modal from '../../modal/Modal';
+import React from 'react'
 
 
 const PATH = './src/images/'
@@ -7,27 +6,24 @@ const PATH = './src/images/'
 const Card = ({ imagen, setModalData, extra }) => {
 
     function openHandleModal() {
-        setModalData(imagen.backdrop);
+        setModalData(imagen);
     }
 
 
-    const r = Math.floor(Math.random() * 100)
-
     return (
-        <div className={`card border border-1 border-black ${extra} `} key={Math.random() * 100000} >
-            {/* <div className="card border border-0" key={Math.random() * 100000} > */}
+        <div className={`card border border-1 border-black ${extra} `} key={imagen.id} >
             <img
                 className='card-img-top'
                 src={imagen.backdrop}
-                alt={imagen}
-                key={imagen}
+                alt={imagen.title}
+                key={imagen.id}
                 style={{ zIndex: '2' }}
                 onClick={openHandleModal}
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
             />
             <div className="card-body bg-dark text-light">
-                <p className="card-text">❤❤❤❤❤</p>
+                <p className="card-text">❤❤ ❤❤</p>
             </div>
         </div>
     )
