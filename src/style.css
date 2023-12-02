@@ -47,7 +47,7 @@
   }
   
   .card {
-    margin: 0 2px;
+    margin: 0 4px;
     transition-duration: .2s;
     transition-delay: .2s;
     /* min-height:100%; */

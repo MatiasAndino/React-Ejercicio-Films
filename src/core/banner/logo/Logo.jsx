@@ -12,7 +12,7 @@ const Logo = ({ movie }) => {
         params: { include_image_language: 'en', language: 'en' },
         headers: {
             accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkODliMzk0M2VmODZhMTczMDc3NWViNzdhMmU5NDFjZSIsInN1YiI6IjY1NGUwZWMzNWE1ZWQwMDEzYmFjNDE1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.lk1TOJ6yao9ttbTGusrw9_ily9aqxAOpd4dgnPji9e4'
+            Authorization: import.meta.env.VITE_APP_TMDB_AUTH
         }
     };
 

@@ -6,7 +6,7 @@ const BackgroundImage = ({ parent, movie }) => {
 
   const style = {
     width: '100%',
-    maxHeight: 'auto',
+    // maxHeight: '100vh',
     zIndex: '1',
   };
 
@@ -16,7 +16,7 @@ const BackgroundImage = ({ parent, movie }) => {
   return (
     <div className='position-relative'>
       <Logo movie={movie} />
-      <img src={movie.backdrop} className="rounded" alt="backgroundImage" style={style} />
+      <img src={movie.poster} className="rounded" alt="backgroundImage" style={style} />
       <div className={`gradient-banner-image gradient-banner-image${parent === 'Banner' && '-modal'} position-absolute bottom-0`}></div>
 
       {/* {parent !== 'Banner' && <Tarjeta src={src} />} */}
