@@ -12,7 +12,7 @@ const Logo = ({ movie }) => {
         params: { include_image_language: 'en', language: 'en' },
         headers: {
             accept: 'application/json',
-            Authorization: import.meta.env.VITE_APP_TMDB_AUTH
+            Authorization: import.meta.env.VITE_APP_TMDB_AUTH,
         }
     };
 
