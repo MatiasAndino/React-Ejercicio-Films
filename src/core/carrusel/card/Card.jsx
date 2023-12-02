@@ -1,4 +1,6 @@
 import React from 'react'
+// import ima from '../../../assets/vacio.jpg'
+import vacio from '../../../assets/vacio.jpg'
 
 
 const PATH = './src/images/'
@@ -9,12 +11,14 @@ const Card = ({ imagen, setModalData, extra }) => {
         setModalData(imagen);
     }
 
-
+    // const vacio = '../../../assets/vacio.jpg'
+    const backdrop = imagen.backdrop.includes('null') ? vacio : imagen.backdrop;
+    console.log(backdrop)
     return (
-        <div className={`card border border-1 border-black bg-danger ${extra} `} key={imagen.id} >
+        <div className={`card border border-1 border-black ${extra} `} key={imagen.id} >
             <img
                 className='card-img-top'
-                src={imagen.backdrop}
+                src={vacio}
                 alt={imagen.title}
                 key={imagen.id}
                 style={{ zIndex: '2' }}
