@@ -6,10 +6,9 @@ import ContenedorBotonesBanner from './contenedor_botones/ContenedorBotonesBanne
 const ContenedorLogoBotones = ({ children, ...props }) => {
 
     const {origen} = props;
-    console.log(origen)
 
     return (
-        <div className='position-relative  w-25 h-100' style={{ marginLeft:'40px' }}>
+        <div className='position-relative  w-25 h-100' style={{ marginLeft:'40px', marginTop:'-30px' }}>
             <div className='position-absolute container top-50'>
                 {children}
 

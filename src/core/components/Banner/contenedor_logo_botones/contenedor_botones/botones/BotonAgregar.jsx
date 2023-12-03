@@ -4,7 +4,10 @@ import React from 'react'
 
 const BotonAgregar = () => {
   return (
-    <a href=""><FontAwesomeIcon className='text-light' icon={faPlus} /></a>
+    <button className='btn text-light'>
+      <FontAwesomeIcon icon={faPlus}  style={{fontSize:'1.5vw'}}/>
+      </button>
+    // <a href=""><FontAwesomeIcon className='text-light' icon={faPlus}  style={{fontSize:'1.5vw'}}/></a>
   )
 }
 

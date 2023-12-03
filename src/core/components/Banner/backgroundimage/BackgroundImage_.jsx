@@ -1,21 +1,20 @@
 import React from 'react'
 
 const DEFAULT_IMAGE = 'https://image.tmdb.org/t/p/original/xgGGinKRL8xeRkaAR9RMbtyk60y.jpg';
-const BackgroundImage_ = () => {
+const BackgroundImage_ = ({movie}) => {
 
     const gradientStyle = {
         marginBottom: '-5px',
         height: '10vw',
         width: '100%',
-        background: 'rgb(33, 37, 41)',
+        // background: 'rgb(33, 37, 41)',
         background: 'linear-gradient(0deg, rgba(33, 37, 41, 1) 25%, rgba(0, 212, 255, 0) 100%)'
     }
-
 
     return (
 
         <>
-            <img className='img-fluid' src={DEFAULT_IMAGE}/>
+            <img className='img-fluid w-100' src={ movie.poster || DEFAULT_IMAGE}/>
             <div className='position-absolute bottom-0' style={gradientStyle}></div>
         </>
 

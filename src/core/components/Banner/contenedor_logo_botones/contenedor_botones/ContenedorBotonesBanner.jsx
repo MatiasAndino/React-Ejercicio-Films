@@ -17,10 +17,10 @@ const ContenedorBotonesBanner = () => {
         <div className="m-2">
             <BotonReproducir />
         </div>
-        <div className="m-3">
+        <div className="p-2">
             <BotonAgregar />
         </div>
-        <div className="m-3">
+        <div className="p-2">
             <BotonThumbsup />
         </div>
     </div>

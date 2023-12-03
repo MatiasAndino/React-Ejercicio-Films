@@ -4,7 +4,12 @@ import React from 'react'
 
 const BotonThumbsup = () => {
   return (
-    <a href=""><FontAwesomeIcon className='text-light' icon={faThumbsUp} /></a>
+
+    <button className='btn text-light'>
+      <FontAwesomeIcon icon={faThumbsUp} style={{ fontSize: '1.5vw' }} />
+
+    </button>
+
   )
 }
 

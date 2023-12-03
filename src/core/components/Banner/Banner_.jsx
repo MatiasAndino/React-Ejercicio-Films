@@ -1,39 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BackgroundImage_ from './backgroundimage/BackgroundImage_'
 import ContenedorLogoBotones from './contenedor_logo_botones/ContenedorLogoBotones'
 import ContenedorCarousel from './contenedor_carousel/ContenedorCarousel'
 import Gradient from './gradient/Gradient'
+import useUpCommingMovies from '../../datasource/remote/tmdb/useUpCommingMovies'
 
 
-
+const CAROUSEL_ITEMS = 20;
 const Banner_ = ({ origen }) => {
 
+  const { upcomingMovies, upcomingMoviesIsLoading } = useUpCommingMovies();
 
+  const randomNumber = new Date().getMinutes() % CAROUSEL_ITEMS;
+  
   const condicional = origen === 'HomeView';
-
+ 
   return (
-    <div className='position-relative'>
+    <>
+      { !upcomingMoviesIsLoading &&
+        <div className='position-relative'>
 
-      <BackgroundImage_ />
+          <BackgroundImage_ movie={upcomingMovies[randomNumber]} />
 
-      <div className={`position-absolute w-100 top-50`}>
-        <ContenedorLogoBotones origen={condicional}>
-          <ContenedorLogoBotones.Logo />
-        </ContenedorLogoBotones>
+          <div className={`position-absolute w-100 bottom-50`}>
+            <ContenedorLogoBotones origen={condicional}>
+              <ContenedorLogoBotones.Logo movie={upcomingMovies[randomNumber]} />
+            </ContenedorLogoBotones>
 
-      </div>
+          </div>
 
-      {
-        condicional &&
-        <div className="position-absolute w-100 bottom-0">
-          <ContenedorCarousel />
-        </div>
+          {
+            condicional &&
+            <div className="position-absolute w-100 bottom-0">
+              <ContenedorCarousel title={'Upcoming Movies'} data={upcomingMovies} />
+            </div>
+          }
+        </div >
+
       }
-
-
-
-
-    </div >
+    </>
   )
 }
 

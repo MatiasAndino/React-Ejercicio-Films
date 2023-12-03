@@ -7,8 +7,10 @@ import React from 'react'
 const BotonReproducir = () => {
 
     const styleBtn = {
-        width: '8.5vw',
-        fontSize: '1vw',
+        width: '9vw',
+        fontSize: '.8vw',
+        height:'2vw'
+        // boxShadow: '0px 0px 200px 1px rgba(0,0,0,0.75)',
     }
 
   return (

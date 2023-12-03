@@ -9,7 +9,7 @@ const Logo_ = ({ movie }) => {
 
     const options = {
         method: 'GET',
-        url: `https://api.themoviedb.org/3/movie/${BORRAR}/images`,
+        url: `https://api.themoviedb.org/3/movie/${movie.id}/images`,
         // url: `https://api.themoviedb.org/3/movie/${movie.id}/images`,
         params: { include_image_language: 'en', language: 'en' },
         headers: {

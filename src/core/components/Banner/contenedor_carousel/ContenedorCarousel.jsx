@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Carrusel from '../../../carrusel/Carrusel'
 import useUpCommingMovies from '../../../datasource/remote/tmdb/useUpCommingMovies';
 
-const ContenedorCarousel = () => {
-  const { upcomingMovies, upcomingMoviesIsLoading } = useUpCommingMovies();
+const ContenedorCarousel = ({ title, data }) => {
 
   return (
     <div className=' w-100'>
-        { !upcomingMoviesIsLoading && <Carrusel data={upcomingMovies} titulo='Upcoming Movies' />}
+      {/* {!upcomingMoviesIsLoading && <Carrusel data={data} titulo={title} />} */}
+      <Carrusel data={data} titulo={title} />
     </div>
   )
 }
