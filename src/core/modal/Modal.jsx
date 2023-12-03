@@ -1,5 +1,6 @@
 import React from 'react'
 import Banner from '../banner/Banner'
+import Banner_ from '../components/Banner/Banner_'
 
 
 //EL ANCHO DEL MODAL PODRIA SER EN BASE A LOS MARGENES, TIPO EL ANCHO SIEMPRE SERA DEL 100% E IR MANEJANDO LOS MARGENES
@@ -10,7 +11,6 @@ import Banner from '../banner/Banner'
 
 
 const Modal = ({ children, ...props }) => {
-    // const visible = props.visible ? 'modal-backdrop fade show' : 'modal fade';
     return (
         <>
             <div className="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -25,14 +25,14 @@ const Modal = ({ children, ...props }) => {
 }
 
 const BannerModal = ({ ...props }) => {
-    return <Banner {...props} />
+    return <Banner_ {...props} />
 }
 
 const Body = ({ ...props }) => {
     return (
         <div className="modal-body">
-            <p className='text-success fw-bold'>97 % para ti</p>
-            <span>comedia, accion, romance</span>
+            {/* <p className='text-success fw-bold'>97 % para ti</p> */}
+            {/* <span>comedia, accion, romance</span> */}
             <div style={{height: '100vh'}}></div>
         </div>
     )

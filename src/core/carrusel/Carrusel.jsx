@@ -84,10 +84,6 @@ const Carrusel = ({ titulo, data }) => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-            <Modal>
-                <Modal.BannerModal parent='Banner' movie={modalData} />
-                <Modal.Body />
-            </Modal>
         </div>
 
     )

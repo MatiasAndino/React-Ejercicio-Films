@@ -41,9 +41,23 @@ const Logo = ({ movie }) => {
 
 
     return (
-        <div className='position-absolute w-75 h-100 row align-items-center p-4'>
-            <div className='w-50 '>
+        <div className='position-absolute w-75 h-100 row align-items-center p-4 mt-5'>
+            <div className='w-50'>
                 {informacion}
+
+                <div className='container-fluid'>
+
+                    <div className='row'>
+                        <div className='col-6'>
+                            <button className='col-6 shadow btn btn-light m-5 fw-semibold' style={{ width:'70%', fontSize: '1vw' }}>▷ Reproducir</button>
+                        </div>
+                        <div className='col-6'>
+                            <button className='col-6 shadow btn btn-secondary bg-secondary bg-opacity-75 m-5 fw-semibold' style={{ width:'10vw', fontSize: '1vw' }}>℗ Más Información</button>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     )

@@ -1,54 +1,37 @@
 import React from 'react';
 import { useAuth } from '../../../core/auth/hook/use_auth';
-import Carrusel from '../../../core/carrusel/Carrusel';
+import Banner_ from '../../../core/components/Banner/Banner_';
+import Navbar from '../../../core/navbar/Navbar';
+import Modal from '../../../core/modal/Modal';
 
-import {
-    getPopularMovies,
-    getTopRatedMovies,
-    getUpcomingMovies,
-} from "../services/movies.services";
-
-import useSWR from 'swr';
-import Banner from '../../../core/banner/Banner';
-import usePopularMovies from '../../../core/datasource/remote/tmdb/usePopularMovies';
-import useTopRatedMovies from '../../../core/datasource/remote/tmdb/useTopRatedMovies';
-
-
+const ORIGEN = 'HomeView'
 const HomeView = () => {
 
-    const { logout } = useAuth();
-
-
-
-    // const {
-    //     data: popularMovies,
-    //     error: popularMoviesError,
-    //     isLoading: popularMoviesIsLoading,
-    // } = useSWR("getPopularMovies", getPopularMovies);
-
-    // const {
-    //     data: upComingMovies,
-    //     error: upComingMoviesError,
-    //     isLoading: tupComingMoviesIsLoading,
-    // } = useSWR("getUpcomingMovies", getUpcomingMovies);
-
-    const {popularMovies, popularMoviesIsLoading}  = usePopularMovies();
-    const {topRatedMovies, topRatedMoviesIsLoading}  = useTopRatedMovies();
 
     return (
-        <div className='bg-dark'>
-
-            {/* <h1>HOME VIEW</h1>
-            <button className='btn btn-outline-danger' onClick={logout}>CERRAR SESIÓN</button>
- */}
-
-            <Banner parent='HomeView' />
-
-            {!popularMoviesIsLoading && <Carrusel data={popularMovies} titulo='Popular Movies' isLoading={popularMoviesIsLoading}/>}
-            {!topRatedMoviesIsLoading && <Carrusel data={topRatedMovies} titulo='Top Rated Movies' isLoading={topRatedMoviesIsLoading}/>}
-
+        <div className='bg-danger'>
+            <Navbar />
+            <Banner_ origen={ORIGEN} />
+            <div className='vw-25 vh-100 fs-1 bg-dark text-center'>
+                <Modal>
+                    <Modal.BannerModal parent='Banner' movie={''} />
+                    <Modal.Body />
+                </Modal>
+            </div>
         </div>
     )
 }
 
 export default HomeView;
+
+
+
+/* https://image.tmdb.org/t/p/original/xgGGinKRL8xeRkaAR9RMbtyk60y.jpg */
+
+
+/*
+
+Style on hover ----> para el titulo del carousel 
+
+
+*/
