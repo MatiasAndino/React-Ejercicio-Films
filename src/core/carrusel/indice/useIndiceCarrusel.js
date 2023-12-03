@@ -4,19 +4,19 @@ const useIndiceCarrusel = () => {
 
     const [activeIndex, setActiveIndex] = useState(0);
     
-    function next(iteraciones) {
+    function nextIndex(iteraciones) {
         setActiveIndex((activeIndex + 1) % iteraciones);
     }
     
-    function prev(iteraciones) {
+    function prevIndex(iteraciones) {
         setActiveIndex((activeIndex - 1 + iteraciones) % iteraciones);
     }
 
-    function reset() {
+    function resetIndex() {
         setActiveIndex(0);
     }
 
-    return { activeIndex, next, prev, reset };
+    return { activeIndex, nextIndex, prevIndex, resetIndex };
 }
 
 export default useIndiceCarrusel;

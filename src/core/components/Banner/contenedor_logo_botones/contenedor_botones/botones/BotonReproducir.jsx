@@ -9,8 +9,8 @@ const BotonReproducir = () => {
     const styleBtn = {
         width: '9vw',
         fontSize: '.8vw',
-        height:'2vw'
-        // boxShadow: '0px 0px 200px 1px rgba(0,0,0,0.75)',
+        height:'2vw',
+        boxShadow: '0px 0px 200px 1px rgba(0,0,0,0.75)',
     }
 
   return (

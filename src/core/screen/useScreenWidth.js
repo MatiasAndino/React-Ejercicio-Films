@@ -17,16 +17,17 @@ const useScreenWidth = () => {
 
     useEffect(() => {
         window.addEventListener('resize', detectSize);
+        
         return () => {
             window.removeEventListener('resize', detectSize);
         }
     }, [screenWidth])
 
     switch (true) {
-        case (screenWidth >= SCREEN_WIDTH[0].width): return { screenWidth, items: SCREEN_WIDTH[0].items, style: SCREEN_WIDTH[0].style };
-        case (screenWidth >= SCREEN_WIDTH[1].width): return { screenWidth, items: SCREEN_WIDTH[1].items, style: SCREEN_WIDTH[1].style };
-        case (screenWidth >= SCREEN_WIDTH[2].width): return { screenWidth, items: SCREEN_WIDTH[2].items, style: SCREEN_WIDTH[2].style };
-        default: return { screenWidth, items: SCREEN_WIDTH[3].items, style: SCREEN_WIDTH[3].style };
+        case (screenWidth >= SCREEN_WIDTH[0].width): return { items: SCREEN_WIDTH[0].items, style: SCREEN_WIDTH[0].style };
+        case (screenWidth >= SCREEN_WIDTH[1].width): return { items: SCREEN_WIDTH[1].items, style: SCREEN_WIDTH[1].style };
+        case (screenWidth >= SCREEN_WIDTH[2].width): return { items: SCREEN_WIDTH[2].items, style: SCREEN_WIDTH[2].style };
+        default: return { items: SCREEN_WIDTH[3].items, style: SCREEN_WIDTH[3].style };
     }
 }
 

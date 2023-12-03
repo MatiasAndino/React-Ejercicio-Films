@@ -7,10 +7,10 @@ const BORRAR = '901362';
 const Logo_ = ({ movie }) => {
     const [data, setData] = useState('')
 
+
     const options = {
         method: 'GET',
         url: `https://api.themoviedb.org/3/movie/${movie.id}/images`,
-        // url: `https://api.themoviedb.org/3/movie/${movie.id}/images`,
         params: { include_image_language: 'en', language: 'en' },
         headers: {
             accept: 'application/json',
@@ -24,22 +24,24 @@ const Logo_ = ({ movie }) => {
             .then(function (response) {
 
                 const { logos } = response.data;
-
+                
+                let ancho = 'w-100'
                 let path = '';
                 try {
                     path = logos[0].file_path;
+                    if (logos[0].aspect_ratio < 1.35) ancho = 'w-50';
                 } catch (error) {
                     console.log('LOGO->', error)
                 }
 
-                setData(<img className='img-fluid' src={URL + path} />);
+                setData(<img className={`img-fluid ${ancho}`} src={URL + path} />);
 
             })
             .catch(function (error) {
                 console.error(error);
             });
 
-    }, [])
+    }, [movie])
 
 
     return (

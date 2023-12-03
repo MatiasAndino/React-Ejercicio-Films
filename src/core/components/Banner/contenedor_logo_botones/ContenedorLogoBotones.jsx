@@ -8,10 +8,9 @@ const ContenedorLogoBotones = ({ children, ...props }) => {
     const {origen} = props;
 
     return (
-        <div className='position-relative  w-25 h-100' style={{ marginLeft:'40px', marginTop:'-30px' }}>
+        <div className='position-relative  w-25 h-100' style={{ marginLeft:'40px', marginTop:'-40px' }}>
             <div className='position-absolute container top-50'>
                 {children}
-
                 {
                     origen
                     ? <ContenedorBotones />

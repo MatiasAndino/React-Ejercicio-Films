@@ -1,6 +1,7 @@
 import React from 'react'
 import Banner from '../banner/Banner'
 import Banner_ from '../components/Banner/Banner_'
+import { useModalContext } from '../components/context/ContentContext';
 
 
 //EL ANCHO DEL MODAL PODRIA SER EN BASE A LOS MARGENES, TIPO EL ANCHO SIEMPRE SERA DEL 100% E IR MANEJANDO LOS MARGENES
@@ -10,12 +11,16 @@ import Banner_ from '../components/Banner/Banner_'
 
 
 
-const Modal = ({ children, ...props }) => {
+const Modal = ({ children }) => {
+    const { movie } = useModalContext ();
+
     return (
         <>
             <div className="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content bg-dark shadow-lg text-light">
+                        <Banner_ origen="Banner" movie={movie} />
+
                         {children}
                     </div>
                 </div>
@@ -25,7 +30,7 @@ const Modal = ({ children, ...props }) => {
 }
 
 const BannerModal = ({ ...props }) => {
-    return <Banner_ {...props} />
+    // return <Banner_ {...props} />
 }
 
 const Body = ({ ...props }) => {
@@ -33,7 +38,7 @@ const Body = ({ ...props }) => {
         <div className="modal-body">
             {/* <p className='text-success fw-bold'>97 % para ti</p> */}
             {/* <span>comedia, accion, romance</span> */}
-            <div style={{height: '100vh'}}></div>
+            <div style={{ height: '100vh' }}></div>
         </div>
     )
 }

@@ -7,7 +7,7 @@ import useUpCommingMovies from '../../datasource/remote/tmdb/useUpCommingMovies'
 
 
 const CAROUSEL_ITEMS = 20;
-const Banner_ = ({ origen }) => {
+const Banner_ = ({ origen, movie }) => {
 
   const { upcomingMovies, upcomingMoviesIsLoading } = useUpCommingMovies();
 
@@ -20,11 +20,12 @@ const Banner_ = ({ origen }) => {
       { !upcomingMoviesIsLoading &&
         <div className='position-relative'>
 
-          <BackgroundImage_ movie={upcomingMovies[randomNumber]} />
+          <BackgroundImage_ movie={movie || upcomingMovies[randomNumber]} />
 
-          <div className={`position-absolute w-100 bottom-50`}>
+          <div className={`position-absolute w-100 top-50`}>
             <ContenedorLogoBotones origen={condicional}>
-              <ContenedorLogoBotones.Logo movie={upcomingMovies[randomNumber]} />
+              <ContenedorLogoBotones.Logo movie={movie || upcomingMovies[randomNumber]} />
+              {/* <ContenedorLogoBotones.Logo movie={movie || upcomingMovies[randomNumber]} /> */}
             </ContenedorLogoBotones>
 
           </div>
