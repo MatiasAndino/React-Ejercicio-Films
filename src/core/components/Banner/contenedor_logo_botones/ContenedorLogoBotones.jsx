@@ -5,15 +5,17 @@ import ContenedorBotonesBanner from './contenedor_botones/ContenedorBotonesBanne
 
 const ContenedorLogoBotones = ({ children, ...props }) => {
 
-    const {origen} = props;
+    const {origen, movie} = props;
 
     return (
         <div className='position-relative  w-25 h-100' style={{ marginLeft:'40px', marginTop:'-40px' }}>
             <div className='position-absolute container top-50'>
-                {children}
+                {/* {children} */}
+                <Logo_ movie={movie} />
+
                 {
                     origen
-                    ? <ContenedorBotones />
+                    ? <ContenedorBotones movie={movie}/>
                     : <ContenedorBotonesBanner />
                 }
             </div>
@@ -23,7 +25,7 @@ const ContenedorLogoBotones = ({ children, ...props }) => {
 
 
 const Logo = ({ ...props }) => {
-    return <Logo_ {...props} />
+    // return <Logo_ {...props} />
 }
 
 ContenedorLogoBotones.Logo = Logo;

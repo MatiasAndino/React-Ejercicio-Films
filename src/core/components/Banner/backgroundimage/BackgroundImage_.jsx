@@ -14,7 +14,7 @@ const BackgroundImage_ = ({movie}) => {
     return (
 
         <>
-            <img className='img-fluid w-100' src={ movie.poster || DEFAULT_IMAGE}/>
+            <img className='img-fluid w-100 rounded' src={ movie.poster || DEFAULT_IMAGE}/>
             <div className='position-absolute bottom-0' style={gradientStyle}></div>
         </>
 

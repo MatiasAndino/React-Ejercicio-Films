@@ -9,7 +9,6 @@ const ContenedorBotonesBanner = () => {
 
   const contenedorBotonesStyle = {
     minHeight:'2vw', 
-    minWidth:'70vw'
   }
 
   return (
@@ -18,10 +17,10 @@ const ContenedorBotonesBanner = () => {
             <BotonReproducir />
         </div>
         <div className="p-2">
-            <BotonAgregar />
+            {/* <BotonAgregar /> */}
         </div>
         <div className="p-2">
-            <BotonThumbsup />
+            {/* <BotonThumbsup /> */}
         </div>
     </div>
   )
