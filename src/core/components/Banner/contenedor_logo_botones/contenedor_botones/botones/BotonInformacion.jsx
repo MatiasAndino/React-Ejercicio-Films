@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+
 import React from 'react'
 
 const BotonInformacion = () => {
@@ -9,7 +12,7 @@ const BotonInformacion = () => {
     }
 
   return (
-    <button className='btn btn-secondary bg-secondary bg-opacity-75 fw-semibold h-100 ' style={styleBtn}>© Más Información</button>
+    <button className='btn btn-secondary bg-secondary bg-opacity-75 fw-semibold ' style={styleBtn}><FontAwesomeIcon icon={faCircleInfo} />  Más Información</button>
   )
 }
 

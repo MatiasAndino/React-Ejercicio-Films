@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 
 
@@ -10,7 +12,7 @@ const BotonReproducir = () => {
     }
 
   return (
-    <button className='btn btn-light fw-semibold h-100' style={styleBtn}><FontAwesomeIcon icon="fa-solid fa-play" /> Reproducir</button>
+    <button className='btn btn-light fw-semibold' style={styleBtn}><FontAwesomeIcon icon={faPlay} /> Reproducir</button>
   )
 }
 

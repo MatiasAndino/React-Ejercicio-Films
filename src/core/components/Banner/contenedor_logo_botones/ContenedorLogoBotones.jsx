@@ -1,14 +1,23 @@
 import React from 'react'
 import Logo_ from './logo/Logo_'
 import ContenedorBotones from './contenedor_botones/ContenedorBotones'
+import ContenedorBotonesBanner from './contenedor_botones/ContenedorBotonesBanner';
 
 const ContenedorLogoBotones = ({ children, ...props }) => {
+
+    const {origen} = props;
+    console.log(origen)
 
     return (
         <div className='position-relative  w-25 h-100' style={{ marginLeft:'40px' }}>
             <div className='position-absolute container top-50'>
                 {children}
-                <ContenedorBotones />
+
+                {
+                    origen
+                    ? <ContenedorBotones />
+                    : <ContenedorBotonesBanner />
+                }
             </div>
         </div>
     )

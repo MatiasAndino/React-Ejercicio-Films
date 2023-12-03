@@ -11,16 +11,13 @@ const Banner_ = ({ origen }) => {
 
   const condicional = origen === 'HomeView';
 
-  const height = condicional ? 'h-100' : 'h-50';
-  const top = condicional ? 'top-50' : '';
-
   return (
     <div className='position-relative'>
 
       <BackgroundImage_ />
 
       <div className={`position-absolute w-100 top-50`}>
-        <ContenedorLogoBotones>
+        <ContenedorLogoBotones origen={condicional}>
           <ContenedorLogoBotones.Logo />
         </ContenedorLogoBotones>
 
@@ -28,7 +25,7 @@ const Banner_ = ({ origen }) => {
 
       {
         condicional &&
-        <div className="position-absolute top-100 translate-middle start-50 w-100">
+        <div className="position-absolute w-100 bottom-0">
           <ContenedorCarousel />
         </div>
       }
