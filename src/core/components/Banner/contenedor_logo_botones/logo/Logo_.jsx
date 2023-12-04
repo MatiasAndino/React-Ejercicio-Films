@@ -33,7 +33,7 @@ const Logo_ = ({ movie }) => {
                 let path = '';
                 try {
                     path = logos[0].file_path;
-                    // if (logos[0].aspect_ratio < 1.35) ancho = 'w-50';
+                    if (logos[0].aspect_ratio < 1.35) ancho = 'w-50';
                 } catch (error) {
                     console.log('LOGO->', error)
                 }
