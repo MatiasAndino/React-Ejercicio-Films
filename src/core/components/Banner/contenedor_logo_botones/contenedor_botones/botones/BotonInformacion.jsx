@@ -10,9 +10,6 @@ const BotonInformacion = ({ movie }) => {
     fontSize: '.8vw',
     height: '2vw',
     boxShadow: '0px 0px 200px 1px rgba(0,0,0,0.25)',
-    // boxShadow: '0px 0px 50000px 1px rgba(0,0,0,0.75)',
-    // width: 'calc(9vw + 60px)',
-    // fontSize: 'calc(.7vw + .4rem)',
   }
 
   const { setMovie } = useModalContext();
@@ -20,10 +17,10 @@ const BotonInformacion = ({ movie }) => {
   function handleClick() {
     setMovie(movie);
   }
-  
+
   return (
     <button
-      className='btn btn-secondary bg-secondary bg-opacity-75 fw-semibold '
+      className='btn btn-secondary bg-secondary bg-opacity-75 fw-semibold'
       style={styleBtn}
       onClick={handleClick} 
       data-bs-toggle="modal"

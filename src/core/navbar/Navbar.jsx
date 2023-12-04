@@ -11,7 +11,7 @@ const Navbar = () => {
 
         // <div className="position-absolute bg-dark vw-100">
 
-            <nav className="navbar navbar-expand-sm navbar-dark shadow-5-strong text-dark fixed-top bg-dark bg-opacity-25" >
+            <nav className="navbar navbar-expand-sm navbar-dark shadow-5-strong text-dark fixed-top bg-dark bg-opacity-50" >
                 <div className='container-fluid d-flex'>
                     <div className="d-flex" style={{ marginLeft: '40px', height:'3vh' }}>
                         <a className="navbar-brand" href="#"><img src={logo} alt='logo' style={{marginTop:'-50px'}} /></a>
