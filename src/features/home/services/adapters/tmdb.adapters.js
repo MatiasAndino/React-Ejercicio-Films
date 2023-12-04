@@ -3,6 +3,8 @@ import { tmdb_paths } from "../../../../core/datasource/remote/tmdb/tmdb_api";
 export const tdmbMoviesTvAdapter = (response) => {
   const { results } = response;
 
+  console.log(results)
+  
   return results.map((item) => ({
     id: item.id,
     title: item.title || item.name,
@@ -12,6 +14,7 @@ export const tdmbMoviesTvAdapter = (response) => {
     description: item.overview,
     rating: item.vote_average,
     video: item.video,
+    date: item.first_air_date, 
 
   }));
 };

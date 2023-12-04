@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import BackgroundImage_ from './backgroundimage/BackgroundImage_'
 import ContenedorLogoBotones from './contenedor_logo_botones/ContenedorLogoBotones'
 import ContenedorCarousel from './contenedor_carousel/ContenedorCarousel'
-import Gradient from './gradient/Gradient'
 import useUpCommingMovies from '../../datasource/remote/tmdb/useUpCommingMovies'
 
 
@@ -25,7 +24,6 @@ const Banner_ = ({ origen, movie }) => {
           <div className={`position-absolute w-100 top-50`}>
             <ContenedorLogoBotones origen={condicional} movie={movie || upcomingMovies[randomNumber]}>
               <ContenedorLogoBotones.Logo movie={movie || upcomingMovies[randomNumber]} />
-              {/* <ContenedorLogoBotones.Logo movie={movie || upcomingMovies[randomNumber]} /> */}
             </ContenedorLogoBotones>
 
           </div>
