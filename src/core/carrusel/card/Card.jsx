@@ -77,14 +77,24 @@ const Card = ({ movie, posicion, mediaType }) => {
             <div className="card-body bg-dark text-light">
                 <CardButtonsContainer />
 
-                <ul class="list-group list-group-horizontal bg-transparent border border-0">
+                <ul class="list-group list-group-horizontal bg-transparent border border-0 mt-2">
                     {
                         mediaGenres.map((e, i) => (
-                            <span className='d-inline-block text-truncate uj' >{genre[e]}{(i !== mediaGenres.length - 1) && ' • '}</span>
+                            <span className='d-inline-block text-truncate' style={{fontSize: '.7rem'}}>{genre[e]}{(i !== mediaGenres.length - 1) && ' • '}</span>
                         ))
                     }
                 </ul>
-                <Grafico valor={rating} />
+                <div className="position-relative">
+
+                    <div className='row mt-2'>
+                        <div className='col-4'>
+                            <Grafico valor={rating} />
+                        </div>
+                        <div className='col-6 position-absolute' style={{left:'2.5vw', top:'5px', lineHeight:'.8'}}>
+                            <span style={{fontSize: '.7rem'}}>Puntuación de usuario</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
