@@ -31,7 +31,7 @@ const Banner_ = ({ origen, movie }) => {
           {
             condicional &&
             <div className="position-absolute w-100 bottom-0">
-              <ContenedorCarousel title={'Upcoming Movies'} data={upcomingMovies} />
+              <ContenedorCarousel title={'Upcoming Movies'} data={upcomingMovies} mediaType={'movie'} />
             </div>
           }
         </div >

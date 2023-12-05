@@ -3,7 +3,7 @@ import Card from './card/Card'
 import useIndiceCarrusel from './indice/useIndiceCarrusel';
 import useScreenWidth from '../screen/useScreenWidth';
 
-const Carrusel = ({ titulo, data }) => {
+const Carrusel = ({ titulo, data, mediaType }) => {
 
 
     const { items, style } = useScreenWidth();
@@ -50,9 +50,10 @@ const Carrusel = ({ titulo, data }) => {
                         {
                             movieList.map((movie, i) => (
                                 <Card
-                                    imagen={movie}
+                                    movie={movie}
                                     key={movie.id}
                                     posicion={i === 0 ? 'primero' : i === items - 1 ? 'ultimo' : ''}
+                                    mediaType={mediaType}
                                 />
                             ))
                         }

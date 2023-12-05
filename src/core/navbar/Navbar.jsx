@@ -42,6 +42,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div>
+                        <span className='text-light p-1'>Matts</span>
                         <button className='btn btn-danger' onClick={logout} >Logout</button>
                     </div>
                 </div>
