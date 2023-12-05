@@ -18,4 +18,4 @@ const Grafico = ({ valor }) => {
     )
 }
 
-export default Grafico
+export default Grafico;

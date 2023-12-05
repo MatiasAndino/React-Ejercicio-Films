@@ -2,7 +2,7 @@ import React from 'react'
 import vacio from '../../../assets/vacio.jpg'
 import { useModalContext } from '../../components/context/ContentContext';
 import CardButtonsContainer from './botones_card/CardButtonsContainer';
-import Grafico from './grafico/grafico';
+import Grafico from './grafico/Grafico';
 
 const MOVIE_GENRES = {
     28: 'Action',
