@@ -7,38 +7,37 @@ import MediaGenres from '../../utilities/MediaGenres';
 import { useModalContext } from '../../context/ContentContext';
 
 
-const Card = ({ movie, posicion }) => {
+const Card = ({ media, posicion }) => {
 
-    
     const { setMedia } = useModalContext();
     
     function updateMediaData() {
-        setMedia(movie);
+        setMedia(media);
     }
 
-    const backdrop = movie.backdrop.includes('null') ? vacio : movie.backdrop;
-    const rating = Math.floor(Number(movie.rating) * 10);
+    const backdrop = media.backdrop.includes('null') ? vacio : media.backdrop;
+    const rating = Math.floor(Number(media.rating) * 10);
 
     return (
         <div
             className={`card border border-0 bg-dark ${posicion}`}
-            key={movie.id}
-            style={{ visibility: movie.backdrop.includes('null') && 'visually-hidden' }}
+            key={media.id}
+            style={{ visibility: media.backdrop.includes('null') && 'visually-hidden' }}
             onMouseOver={updateMediaData}
         >
             <img
                 className='card-img-top'
                 src={backdrop}
-                alt={movie.title}
-                key={movie.id}
+                alt={media.title}
+                key={media.id}
                 style={{ zIndex: '2' }}
             />
             <div className="card-body bg-dark text-light">
                 <CardButtonsContainer />
 
                 <MediaGenres
-                    genreIds={movie.genreIds}
-                    mediaType={movie.mediaType}
+                    genreIds={media.genreIds}
+                    mediaType={media.mediaType}
                     maxGenresAllowed={3}
                 />
 

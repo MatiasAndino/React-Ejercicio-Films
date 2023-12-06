@@ -2,6 +2,7 @@ import React from 'react'
 // import { useModalContext } from '../components/context/ContentContext';
 import Banner_ from '../Banner/Banner_';
 import { useModalContext } from '../context/ContentContext';
+import MediaGenres from '../utilities/MediaGenres';
 
 
 
@@ -16,6 +17,14 @@ const Modal = () => {
                     <div className="modal-content bg-dark shadow-lg text-light">
                         <Banner_ origen="Banner" media={media} />
                         <div className="modal-body">
+                            {
+                                !!media &&
+                                <MediaGenres
+                                    genreIds={media.genreIds}
+                                    mediaType={media.mediaType}
+                                    maxGenresAllowed={3}
+                                />
+                            }
                             {/* <p className='text-success fw-bold'>97 % para ti</p> */}
                             {/* <span>comedia, accion, romance</span> */}
                             <div style={{ height: '100vh' }}></div>

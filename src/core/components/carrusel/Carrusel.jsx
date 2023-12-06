@@ -48,10 +48,10 @@ const Carrusel = ({ titulo, data }) => {
                         style={{ overflow: 'visible', ...style }}
                     >
                         {
-                            movieList.map((movie, i) => (
+                            movieList.map((media, i) => (
                                 <Card
-                                    movie={movie}
-                                    key={movie.id}
+                                    media={media}
+                                    key={media.id}
                                     posicion={i === 0 ? 'primero' : i === items - 1 ? 'ultimo' : ''}
                                 />
                             ))
