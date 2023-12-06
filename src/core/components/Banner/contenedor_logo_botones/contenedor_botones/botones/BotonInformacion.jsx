@@ -12,10 +12,10 @@ const BotonInformacion = ({ media }) => {
     boxShadow: '0px 0px 200px 1px rgba(0,0,0,0.25)',
   }
 
-  const { setMovie } = useModalContext();
+  const { setMedia } = useModalContext();
 
   function handleClick() {
-    setMovie(media);
+    setMedia(media);
   }
 
   return (

@@ -5,10 +5,10 @@ export const ContentContext = createContext();
 
 export const ContentModalProvider = ({children}) => {
 
-    const [movie, setMovie] = useState('');
+    const [media, setMedia] = useState('');
 
     return (
-        <ContentContext.Provider value={{movie, setMovie}}>
+        <ContentContext.Provider value={{media, setMedia}}>
             {children}
         </ContentContext.Provider>
     )

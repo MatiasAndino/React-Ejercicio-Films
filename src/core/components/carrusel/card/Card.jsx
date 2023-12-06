@@ -1,17 +1,19 @@
 import React from 'react'
 import vacio from '../../../../assets/vacio.jpg'
-import { useModalContext } from '../../../components/context/ContentContext';
+
 import CardButtonsContainer from './botones_card/CardButtonsContainer';
 import Grafico from './grafico/Grafico';
 import MediaGenres from '../../utilities/MediaGenres';
+import { useModalContext } from '../../context/ContentContext';
 
 
 const Card = ({ movie, posicion }) => {
 
-    const { setMovie } = useModalContext();
-
+    
+    const { setMedia } = useModalContext();
+    
     function updateMediaData() {
-        setMovie(movie);
+        setMedia(movie);
     }
 
     const backdrop = movie.backdrop.includes('null') ? vacio : movie.backdrop;

@@ -17,7 +17,7 @@ const ORIGEN = 'HomeView';
 const Content = () => {
     const { topRatedMovies, topRatedMoviesIsLoading } = useTopRatedMovies();
     const { popularMovies, popularMoviesIsLoading } = usePopularMovies();
-    
+
     const { popularTv, popularTvIsLoading } = usePopularTvs();
     const { topRatedTv, topRatedTvIsLoading } = useTopRatedTvs();
     const { airingTv, airingTvIsLoading } = useAiringTvs();
@@ -29,14 +29,12 @@ const Content = () => {
             <Navbar />
             <Banner_ origen={ORIGEN} />
 
-            {!topRatedMoviesIsLoading && <ContenedorCarousel title={'Top Rated Movies'} data={topRatedMovies}/>}
+            {!topRatedMoviesIsLoading && <ContenedorCarousel title={'Top Rated Movies'} data={topRatedMovies} />}
             {!popularMoviesIsLoading && <ContenedorCarousel title={'Popular Movies'} data={popularMovies} />}
             {!popularTvIsLoading && <ContenedorCarousel title={'Popular Tv'} data={popularTv} />}
             {!topRatedTvIsLoading && <ContenedorCarousel title={'Top Rated Tv'} data={topRatedTv} />}
             {!airingTvIsLoading && <ContenedorCarousel title={'Airing Tv'} data={airingTv} />}
-                <Modal>
-                    <Modal.Body />
-                </Modal>
+            <Modal />
             <div className='vw-25 h-100 fs-1 bg-dark text-center'>
                 {/* RELLENO */}
 

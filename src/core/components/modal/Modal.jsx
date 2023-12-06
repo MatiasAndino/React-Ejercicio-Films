@@ -5,8 +5,8 @@ import { useModalContext } from '../context/ContentContext';
 
 
 
-const Modal = ({ children }) => {
-    const { movie } = useModalContext();
+const Modal = () => {
+    const { media } = useModalContext();
 
 
     return (
@@ -14,32 +14,18 @@ const Modal = ({ children }) => {
             <div className="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content bg-dark shadow-lg text-light">
-                        <Banner_ origen="Banner" movie={movie} />
-                        {children}
+                        <Banner_ origen="Banner" media={media} />
+                        <div className="modal-body">
+                            {/* <p className='text-success fw-bold'>97 % para ti</p> */}
+                            {/* <span>comedia, accion, romance</span> */}
+                            <div style={{ height: '100vh' }}></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </>
     )
 }
-
-const BannerModal = ({ ...props }) => {
-    // return <Banner_ {...props} />
-}
-
-const Body = ({ ...props }) => {
-    return (
-        <div className="modal-body">
-            {/* <p className='text-success fw-bold'>97 % para ti</p> */}
-            {/* <span>comedia, accion, romance</span> */}
-            <div style={{ height: '100vh' }}></div>
-        </div>
-    )
-}
-
-Modal.BannerModal = BannerModal;
-Modal.Body = Body;
-
 
 export default Modal
 
