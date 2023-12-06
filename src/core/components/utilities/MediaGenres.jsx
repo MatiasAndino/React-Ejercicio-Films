@@ -52,8 +52,8 @@ const MediaGenres = ({ genreIds, mediaType, maxGenresAllowed = MAX_GENRES_ALLOWE
     return (
         <ul className="list-group list-group-horizontal bg-transparent border border-0 mt-2">
             {
-                genreIds.map((e, i) => (
-                    <span className='d-inline-block text-truncate' key={e} style={style}>{genre[e]}{(i < iterations - 1) && ' • '}</span>
+                mediaGenres.map((e, i) => (
+                    <span className='d-inline-block text-truncate' key={e} style={style}>{genre[e]}{(i < iterations - 1) && <span className='mx-1'>•</span>}</span>
                 ))
             }
         </ul>

@@ -8,6 +8,7 @@ const Information = () => {
       className=''
       data-bs-toggle="modal"
       data-bs-target="#exampleModal"
+      role='button'
     >
       <FontAwesomeIcon icon={faChevronDown} />
 

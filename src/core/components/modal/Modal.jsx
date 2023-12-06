@@ -3,6 +3,7 @@ import React from 'react'
 import Banner_ from '../Banner/Banner_';
 import { useModalContext } from '../context/ContentContext';
 import MediaGenres from '../utilities/MediaGenres';
+import BotonCerrar from '../Banner/contenedor_logo_botones/contenedor_botones/botones/BotonCerrar';
 
 
 
@@ -16,6 +17,9 @@ const Modal = () => {
                 <div className="modal-dialog">
                     <div className="modal-content bg-dark shadow-lg text-light">
                         <Banner_ origen="Banner" media={media} />
+                        <div className='position-absolute end-0'>
+                        <BotonCerrar />
+                        </div>
                         <div className="modal-body">
                             <p className='text-success fw-bold'>97 % para ti</p>
                             {
@@ -24,7 +28,6 @@ const Modal = () => {
                                     genreIds={media.genreIds}
                                     mediaType={media.mediaType}
                                     maxGenresAllowed={3}
-                                    style={{margin: '5px'}}
                                 />
                             }
                             <hr />
