@@ -4,7 +4,7 @@ import Carrusel from '../../carrusel/Carrusel'
 const ContenedorCarousel = ({ title, data, mediaType }) => {
 
   return (
-    <div className=' w-100'>
+    <div className=''>
       <Carrusel data={data} titulo={title} mediaType={mediaType} />
     </div>
   )

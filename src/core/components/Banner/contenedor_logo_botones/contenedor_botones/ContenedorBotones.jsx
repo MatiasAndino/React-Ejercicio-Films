@@ -2,7 +2,7 @@ import React from 'react'
 import BotonReproducir from './botones/BotonReproducir'
 import BotonInformacion from './botones/BotonInformacion'
 
-const ContenedorBotones = ({movie}) => {
+const ContenedorBotones = ({media}) => {
 
   const contenedorBotonesStyle = {
     minHeight:'2.5vw', 
@@ -15,7 +15,7 @@ const ContenedorBotones = ({movie}) => {
             <BotonReproducir />
         </div>
         <div className="m-2">
-            <BotonInformacion movie={movie} />
+            <BotonInformacion media={media} />
         </div>
     </div>
   )

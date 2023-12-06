@@ -49,7 +49,7 @@ const MediaGenres = ({ genreIds, mediaType, maxGenresAllowed = MAX_GENRES_ALLOWE
     const mediaGenres = [...Array(iterations)].map((_, i) => genreIds[i]);
 
     return (
-        <ul class="list-group list-group-horizontal bg-transparent border border-0 mt-2">
+        <ul className="list-group list-group-horizontal bg-transparent border border-0 mt-2">
             {
                 genreIds.map((e, i) => (
                     <span className='d-inline-block text-truncate' key={e} style={{ fontSize: '.7rem' }}>{genre[e]}{(i !== mediaGenres.length - 1) && ' • '}</span>

@@ -11,22 +11,17 @@ const Banner_ = ({ origen, movie }) => {
   const { upcomingMovies, upcomingMoviesIsLoading } = useUpCommingMovies();
 
   const randomNumber = new Date().getMinutes() % CAROUSEL_ITEMS;
-  
+
   const condicional = origen === 'HomeView';
- 
+
   return (
     <>
-      { !upcomingMoviesIsLoading &&
+      {!upcomingMoviesIsLoading &&
         <div className='position-relative'>
 
           <BackgroundImage_ movie={movie || upcomingMovies[randomNumber]} />
 
-          <div className='position-absolute top-0 w-100 h-100 d-flex align-items-center'>
-            <ContenedorLogoBotones origen={condicional} movie={movie || upcomingMovies[randomNumber]}>
-              <ContenedorLogoBotones.Logo movie={movie || upcomingMovies[randomNumber]} />
-            </ContenedorLogoBotones>
-
-          </div>
+          <ContenedorLogoBotones origen={condicional} movie={movie || upcomingMovies[randomNumber]} />
 
           {
             condicional &&

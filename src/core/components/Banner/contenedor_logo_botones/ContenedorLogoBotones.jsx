@@ -1,5 +1,5 @@
-import React from 'react'
-import Logo_ from './logo/Logo_'
+import React from 'react';
+import Logo_ from './logo/Logo_';
 import ContenedorBotones from './contenedor_botones/ContenedorBotones'
 import ContenedorBotonesBanner from './contenedor_botones/ContenedorBotonesBanner';
 
@@ -14,19 +14,22 @@ const ContenedorLogoBotones = ({ children, ...props }) => {
     const formato = origen ? HOMEVIEW_FORMAT : BANNER_FORMAT;
 
     return (
-        <div className='h-50 w-75 position-absolute top-0'>
+        <div className='position-absolute top-0 w-100 h-100 d-flex align-items-center'>
 
-            <div className={`w-50 position-absolute ms-5 d-flex justify-content-center flex-column ${formato}`} >
-                <Logo_ movie={movie} />
-                
-                {
-                    origen
-                        ? <ContenedorBotones movie={movie} />
-                        : <ContenedorBotonesBanner />
-                }
+            <div className='h-50 w-75 position-absolute top-0'>
+
+                <div className={`w-50 position-absolute ms-5 d-flex justify-content-center flex-column ${formato}`} >
+                    <Logo_ media={movie} />
+
+                    {
+                        origen
+                            ? <ContenedorBotones media={movie} />
+                            : <ContenedorBotonesBanner />
+                    }
+                </div>
             </div>
         </div>
     )
 }
 
-export default ContenedorLogoBotones
+export default ContenedorLogoBotones;

@@ -4,7 +4,7 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
 import React from 'react'
 import { useModalContext } from '../../../../context/ContentContext'
 
-const BotonInformacion = ({ movie }) => {
+const BotonInformacion = ({ media }) => {
   const styleBtn = {
     width: '12vw',
     fontSize: '.8vw',
@@ -15,7 +15,7 @@ const BotonInformacion = ({ movie }) => {
   const { setMovie } = useModalContext();
 
   function handleClick() {
-    setMovie(movie);
+    setMovie(media);
   }
 
   return (
