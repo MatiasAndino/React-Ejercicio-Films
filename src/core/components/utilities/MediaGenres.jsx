@@ -43,7 +43,7 @@ const TV_GENRES = {
 
 const MAX_GENRES_ALLOWED_DEFAULT = 3;
 
-const MediaGenres = ({ genreIds, mediaType, maxGenresAllowed = MAX_GENRES_ALLOWED_DEFAULT }) => {
+const MediaGenres = ({ genreIds, mediaType, maxGenresAllowed = MAX_GENRES_ALLOWED_DEFAULT, style }) => {
     
     const iterations =  maxGenresAllowed <= genreIds.length ? maxGenresAllowed : genreIds.length;
     const genre = mediaType === 'movie' ? MOVIE_GENRES : TV_GENRES;
@@ -53,7 +53,7 @@ const MediaGenres = ({ genreIds, mediaType, maxGenresAllowed = MAX_GENRES_ALLOWE
         <ul className="list-group list-group-horizontal bg-transparent border border-0 mt-2">
             {
                 genreIds.map((e, i) => (
-                    <span className='d-inline-block text-truncate' key={e} style={{ fontSize: '.7rem' }}>{genre[e]}{(i < iterations - 1) && ' • '}</span>
+                    <span className='d-inline-block text-truncate' key={e} style={style}>{genre[e]}{(i < iterations - 1) && ' • '}</span>
                 ))
             }
         </ul>

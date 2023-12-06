@@ -39,6 +39,7 @@ const Card = ({ media, posicion }) => {
                     genreIds={media.genreIds}
                     mediaType={media.mediaType}
                     maxGenresAllowed={3}
+                    style={{fontSize:'.5rem'}}
                 />
 
                 {/* <div className="position-relative">
