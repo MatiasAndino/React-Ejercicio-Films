@@ -19,9 +19,9 @@ const Banner_ = ({ origen, movie }) => {
       {!upcomingMoviesIsLoading &&
         <div className='position-relative'>
 
-          <BackgroundImage_ movie={movie || upcomingMovies[randomNumber]} />
+          <BackgroundImage_ media={movie || upcomingMovies[randomNumber]} />
 
-          <ContenedorLogoBotones origen={condicional} movie={movie || upcomingMovies[randomNumber]} />
+          <ContenedorLogoBotones origen={condicional} media={movie || upcomingMovies[randomNumber]} />
 
           {
             condicional &&
@@ -37,26 +37,3 @@ const Banner_ = ({ origen, movie }) => {
 }
 
 export default Banner_
-
-// movie={ movie }
-
-/*
-  CONTENEDOR BANNER
-    ANCHO DEL 100% DE LA VENTANA  <-- PARA QUE EL BACKGROUND SE ADAPTE SOLO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/

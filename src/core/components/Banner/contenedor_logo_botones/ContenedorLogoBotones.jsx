@@ -8,7 +8,7 @@ const HOMEVIEW_FORMAT = 'h-50 top-50';
 
 const ContenedorLogoBotones = ({ children, ...props }) => {
 
-    const { origen, movie } = props;
+    const { origen, media } = props;
 
 
     const formato = origen ? HOMEVIEW_FORMAT : BANNER_FORMAT;
@@ -19,11 +19,11 @@ const ContenedorLogoBotones = ({ children, ...props }) => {
             <div className='h-50 w-75 position-absolute top-0'>
 
                 <div className={`w-50 position-absolute ms-5 d-flex justify-content-center flex-column ${formato}`} >
-                    <Logo_ media={movie} />
+                    <Logo_ media={media} />
 
                     {
                         origen
-                            ? <ContenedorBotones media={movie} />
+                            ? <ContenedorBotones media={media} />
                             : <ContenedorBotonesBanner />
                     }
                 </div>
