@@ -51,7 +51,7 @@ const Card = ({ movie, posicion, mediaType }) => {
 
     const { setMovie } = useModalContext();
 
-    function handleClick() {
+    function updateMediaData() {
         setMovie(movie);
     }
 
@@ -63,14 +63,19 @@ const Card = ({ movie, posicion, mediaType }) => {
     const rating = Math.floor(Number(movie.rating) * 10);
 
     return (
-        <div className={`card border border-0 bg-dark ${posicion}`} key={movie.id} style={{visibility: movie.backdrop.includes('null') && 'visually-hidden'}}>
+        <div
+            className={`card border border-0 bg-dark ${posicion}`}
+            key={movie.id}
+            style={{ visibility: movie.backdrop.includes('null') && 'visually-hidden' }}
+            onMouseOver={updateMediaData}
+        >
             <img
                 className='card-img-top'
                 src={backdrop}
                 alt={movie.title}
                 key={movie.id}
                 style={{ zIndex: '2' }}
-                onClick={handleClick}
+                // onClick={handleClick}
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
             />
@@ -80,7 +85,7 @@ const Card = ({ movie, posicion, mediaType }) => {
                 <ul class="list-group list-group-horizontal bg-transparent border border-0 mt-2">
                     {
                         mediaGenres.map((e, i) => (
-                            <span className='d-inline-block text-truncate' key={e} style={{fontSize: '.7rem'}}>{genre[e]}{(i !== mediaGenres.length - 1) && ' • '}</span>
+                            <span className='d-inline-block text-truncate' key={e} style={{ fontSize: '.7rem' }}>{genre[e]}{(i !== mediaGenres.length - 1) && ' • '}</span>
                         ))
                     }
                 </ul>
@@ -90,8 +95,8 @@ const Card = ({ movie, posicion, mediaType }) => {
                         <div className='col-4'>
                             <Grafico valor={rating} />
                         </div>
-                        <div className='col-6 position-absolute' style={{left:'2.5vw', top:'5px', lineHeight:'.8'}}>
-                            <span style={{fontSize: '.7rem'}}>Puntuación de usuario</span>
+                        <div className='col-6 position-absolute' style={{ left: '2.5vw', top: '5px', lineHeight: '.8' }}>
+                            <span style={{ fontSize: '.7rem' }}>Puntuación de usuario</span>
                         </div>
                     </div>
                 </div>
