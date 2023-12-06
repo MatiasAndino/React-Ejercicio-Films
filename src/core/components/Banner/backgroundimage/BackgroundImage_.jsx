@@ -4,7 +4,7 @@ const BackgroundImage_ = ({ media }) => {
 
     const gradientStyle = {
         marginBottom: '-5px',
-        height: '10vw',
+        height: '5vw',
         width: '100%',
         background: 'linear-gradient(0deg, rgba(33, 37, 41, 1) 25%, rgba(0, 212, 255, 0) 100%)'
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import { useModalContext } from '../components/context/ContentContext';
 import Banner_ from '../Banner/Banner_';
 import { useModalContext } from '../context/ContentContext';
@@ -9,16 +9,47 @@ import BotonCerrar from '../Banner/contenedor_logo_botones/contenedor_botones/bo
 
 const Modal = () => {
     const { media } = useModalContext();
+    const [data, setData] = useState(null);
 
+    useEffect(() => {
+
+        if (!media) return;
+
+        const informacion = (
+            <div className="modal-content bg-dark shadow-lg text-light">
+                <Banner_ origen="Banner" media={media} />
+                <div className='position-absolute end-0'>
+                    <BotonCerrar />
+                </div>
+                <div className="modal-body">
+                    <p className='text-success fw-bold'>97 % para ti</p>
+                    {
+                        !!media &&
+                        <MediaGenres
+                            genreIds={media.genreIds}
+                            mediaType={media.mediaType}
+                            maxGenresAllowed={3}
+                        />
+                    }
+                    <hr />
+                    <p className='m-2' >{media.description}</p>
+                    <div style={{ height: '100vh' }}></div>
+                </div>
+            </div>
+        )
+
+        setData(informacion)
+
+    }, [media])
 
     return (
         <>
             <div className="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
-                    <div className="modal-content bg-dark shadow-lg text-light">
+                    {/* <div className="modal-content bg-dark shadow-lg text-light">
                         <Banner_ origen="Banner" media={media} />
                         <div className='position-absolute end-0'>
-                        <BotonCerrar />
+                            <BotonCerrar />
                         </div>
                         <div className="modal-body">
                             <p className='text-success fw-bold'>97 % para ti</p>
@@ -32,11 +63,10 @@ const Modal = () => {
                             }
                             <hr />
                             <p className='m-2' >{media.description}</p>
-
-                            {/* <span>comedia, accion, romance</span> */}
                             <div style={{ height: '100vh' }}></div>
                         </div>
-                    </div>
+                    </div> */}
+                    {data}
                 </div>
             </div>
         </>
