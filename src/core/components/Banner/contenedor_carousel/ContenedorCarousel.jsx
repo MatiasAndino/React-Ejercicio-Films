@@ -1,5 +1,5 @@
 import React from 'react'
-import Carrusel from '../../../carrusel/Carrusel'
+import Carrusel from '../../carrusel/Carrusel'
 
 const ContenedorCarousel = ({ title, data, mediaType }) => {
 

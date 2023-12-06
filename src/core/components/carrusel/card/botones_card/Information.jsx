@@ -4,8 +4,15 @@ import React from 'react'
 
 const Information = () => {
   return (
-<FontAwesomeIcon icon={faChevronDown} />
-    
+    <a
+      className=''
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+    >
+      <FontAwesomeIcon icon={faChevronDown} />
+
+    </a>
+
   )
 }
 

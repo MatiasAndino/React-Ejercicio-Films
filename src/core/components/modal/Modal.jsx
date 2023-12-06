@@ -8,6 +8,7 @@ import { useModalContext } from '../context/ContentContext';
 const Modal = ({ children }) => {
     const { movie } = useModalContext();
 
+
     return (
         <>
             <div className="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

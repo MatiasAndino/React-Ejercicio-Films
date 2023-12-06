@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from './card/Card'
 import useIndiceCarrusel from './indice/useIndiceCarrusel';
-import useScreenWidth from '../screen/useScreenWidth';
+import useScreenWidth from '../../screen/useScreenWidth';
 
 const Carrusel = ({ titulo, data, mediaType }) => {
 

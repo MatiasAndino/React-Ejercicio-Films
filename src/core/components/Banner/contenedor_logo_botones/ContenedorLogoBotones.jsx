@@ -3,12 +3,15 @@ import Logo_ from './logo/Logo_'
 import ContenedorBotones from './contenedor_botones/ContenedorBotones'
 import ContenedorBotonesBanner from './contenedor_botones/ContenedorBotonesBanner';
 
+const BANNER_FORMAT = 'h-100 top-100';
+const HOMEVIEW_FORMAT = 'h-50 top-50';
+
 const ContenedorLogoBotones = ({ children, ...props }) => {
 
     const { origen, movie } = props;
 
 
-    const formato = origen ? 'h-50 top-50' : 'h-100 top-100';
+    const formato = origen ? HOMEVIEW_FORMAT : BANNER_FORMAT;
 
     return (
         <div className='h-50 w-75 position-absolute top-0'>
@@ -25,12 +28,5 @@ const ContenedorLogoBotones = ({ children, ...props }) => {
         </div>
     )
 }
-
-
-const Logo = ({ ...props }) => {
-    // return <Logo_ {...props} />
-}
-
-ContenedorLogoBotones.Logo = Logo;
 
 export default ContenedorLogoBotones
