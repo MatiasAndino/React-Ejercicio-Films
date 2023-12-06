@@ -47,7 +47,7 @@ const TV_GENRES = {
 
 const MAX_GENRES_ALLOWED = 3;
 
-const Card = ({ movie, posicion, mediaType }) => {
+const Card = ({ movie, posicion }) => {
 
     const { setMovie } = useModalContext();
 
@@ -56,7 +56,7 @@ const Card = ({ movie, posicion, mediaType }) => {
     }
 
     const iterations = MAX_GENRES_ALLOWED <= movie.genreIds.length ? MAX_GENRES_ALLOWED : movie.genreIds.length;
-    const genre = mediaType === 'movie' ? MOVIE_GENRES : TV_GENRES;
+    const genre = movie.mediaType === 'movie' ? MOVIE_GENRES : TV_GENRES;
     const mediaGenres = [...Array(iterations)].map((_, i) => movie.genreIds[i]);
 
     const backdrop = movie.backdrop.includes('null') ? vacio : movie.backdrop;
@@ -75,7 +75,6 @@ const Card = ({ movie, posicion, mediaType }) => {
                 alt={movie.title}
                 key={movie.id}
                 style={{ zIndex: '2' }}
-                // onClick={handleClick}
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
             />

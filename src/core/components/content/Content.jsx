@@ -1,14 +1,15 @@
 import React from 'react'
 import { ContentModalProvider } from '../context/ContentContext'
-import Navbar from '../../navbar/Navbar'
+
 import Banner_ from '../Banner/Banner_'
-import Modal from '../../modal/Modal'
 import useTopRatedMovies from '../../datasource/remote/tmdb/useTopRatedMovies'
 import ContenedorCarousel from '../Banner/contenedor_carousel/ContenedorCarousel'
 import usePopularMovies from '../../datasource/remote/tmdb/usePopularMovies'
 import usePopularTvs from '../../datasource/remote/tmdb/usePopularTvs'
 import useTopRatedTvs from '../../datasource/remote/tmdb/useTopRatedTvs'
 import useAiringTvs from '../../datasource/remote/tmdb/useAiringTvs'
+import Navbar from '../navbar/Navbar'
+import Modal from '../modal/Modal'
 
 
 const ORIGEN = 'HomeView';

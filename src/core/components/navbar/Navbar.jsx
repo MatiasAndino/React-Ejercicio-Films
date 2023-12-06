@@ -1,8 +1,7 @@
 import React from 'react'
-// import logo from '../../assets/skull.svg'
-import logo from '../../assets/netflix128.png'
-import { useAuth } from '../auth/hook/use_auth';
+import logo from '../../../assets/netflix128.png'
 import LinkNavbar from './links/LinkNavbar';
+import { useAuth } from '../../auth/hook/use_auth';
 
 const Navbar = () => {
     const { logout } = useAuth();

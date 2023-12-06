@@ -1,18 +1,12 @@
 import React from 'react'
-import Banner from '../banner/Banner'
-import Banner_ from '../components/Banner/Banner_'
-import { useModalContext } from '../components/context/ContentContext';
-
-
-//EL ANCHO DEL MODAL PODRIA SER EN BASE A LOS MARGENES, TIPO EL ANCHO SIEMPRE SERA DEL 100% E IR MANEJANDO LOS MARGENES
-//CREO QUE EL MODAL SE DEBERIA DECLARAR AL PRINCIPIO Y UTILIZAR UN ESTADO GLOBAL PARA QUE SEA MAS OPTIMO
-
-
+// import { useModalContext } from '../components/context/ContentContext';
+import Banner_ from '../Banner/Banner_';
+import { useModalContext } from '../context/ContentContext';
 
 
 
 const Modal = ({ children }) => {
-    const { movie } = useModalContext ();
+    const { movie } = useModalContext();
 
     return (
         <>
@@ -20,7 +14,6 @@ const Modal = ({ children }) => {
                 <div className="modal-dialog">
                     <div className="modal-content bg-dark shadow-lg text-light">
                         <Banner_ origen="Banner" movie={movie} />
-
                         {children}
                     </div>
                 </div>
