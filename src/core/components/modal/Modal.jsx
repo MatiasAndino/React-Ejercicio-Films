@@ -18,15 +18,18 @@ const Modal = () => {
                         <Banner_ origen="Banner" media={media} />
                         <div className="modal-body">
                             <p className='text-success fw-bold'>97 % para ti</p>
-                                {
-                                    !!media &&
-                                    <MediaGenres
-                                        genreIds={media.genreIds}
-                                        mediaType={media.mediaType}
-                                        maxGenresAllowed={3}
-                                    />
-                                }
-                                
+                            {
+                                !!media &&
+                                <MediaGenres
+                                    genreIds={media.genreIds}
+                                    mediaType={media.mediaType}
+                                    maxGenresAllowed={3}
+                                    style={{margin: '5px'}}
+                                />
+                            }
+                            <hr />
+                            <p className='m-2' >{media.description}</p>
+
                             {/* <span>comedia, accion, romance</span> */}
                             <div style={{ height: '100vh' }}></div>
                         </div>
