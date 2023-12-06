@@ -63,7 +63,7 @@ const Card = ({ movie, posicion, mediaType }) => {
     const rating = Math.floor(Number(movie.rating) * 10);
 
     return (
-        <div className={`card border border-0 bg-dark ${posicion} `} key={movie.id} >
+        <div className={`card border border-0 bg-dark ${posicion}`} key={movie.id} style={{visibility: movie.backdrop.includes('null') && 'visually-hidden'}}>
             <img
                 className='card-img-top'
                 src={backdrop}
@@ -80,7 +80,7 @@ const Card = ({ movie, posicion, mediaType }) => {
                 <ul class="list-group list-group-horizontal bg-transparent border border-0 mt-2">
                     {
                         mediaGenres.map((e, i) => (
-                            <span className='d-inline-block text-truncate' style={{fontSize: '.7rem'}}>{genre[e]}{(i !== mediaGenres.length - 1) && ' • '}</span>
+                            <span className='d-inline-block text-truncate' key={e} style={{fontSize: '.7rem'}}>{genre[e]}{(i !== mediaGenres.length - 1) && ' • '}</span>
                         ))
                     }
                 </ul>

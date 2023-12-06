@@ -21,7 +21,7 @@ const Banner_ = ({ origen, movie }) => {
 
           <BackgroundImage_ movie={movie || upcomingMovies[randomNumber]} />
 
-          <div className={`position-absolute w-100 top-50`}>
+          <div className='position-absolute top-0 w-100 h-100 d-flex align-items-center'>
             <ContenedorLogoBotones origen={condicional} movie={movie || upcomingMovies[randomNumber]}>
               <ContenedorLogoBotones.Logo movie={movie || upcomingMovies[randomNumber]} />
             </ContenedorLogoBotones>
