@@ -5,7 +5,6 @@ import CardButtonsContainer from './botones_card/CardButtonsContainer';
 import Grafico from './grafico/Grafico';
 import MediaGenres from '../../utilities/MediaGenres';
 import { useModalContext } from '../../context/ContentContext';
-import useLocalStorage from '../../hooks/useLocalStorage';
 
 
 const Card = ({ media, posicion }) => {
@@ -16,11 +15,31 @@ const Card = ({ media, posicion }) => {
         setMedia(media);
     }
 
-    const backdrop = media.backdrop.includes('null') ? vacio : media.backdrop;
-    const rating = Math.floor(Number(media.rating) * 10);
+    // const rating = Math.floor(Number(media.rating) * 10);
 
-    return (
-        <div
+    const emptyCard = () => {
+        return <div
+            className={`card border border-0 bg-dark ${posicion}`}
+            style={{ visibility: 'hidden' }}
+        >
+            <img
+                className='card-img-top'
+                src={vacio}
+                style={{ zIndex: '2' }}
+            />
+        </div>
+    }
+
+    const filter = () => {
+
+        
+        if (!media) {
+            return emptyCard();
+        }
+
+        const backdrop = media.backdrop.includes('null') ? vacio : media.backdrop;
+
+        return <div
             className={`card border border-0 bg-dark ${posicion}`}
             key={media.id}
             style={{ visibility: media.backdrop.includes('null') && 'visually-hidden' }}
@@ -44,22 +63,29 @@ const Card = ({ media, posicion }) => {
                     genreIds={media.genreIds}
                     mediaType={media.mediaType}
                     maxGenresAllowed={3}
-                    style={{fontSize:'.65rem'}}
+                    style={{ fontSize: '.65rem' }}
                 />
-                
+
                 {/* <div className="position-relative">
 
-                    <div className='row mt-2'>
-                        <div className='col-4'>
-                            <Grafico valor={rating} />
-                        </div>
-                        <div className='col-6 position-absolute' style={{ left: '2.5vw', top: '5px', lineHeight: '.8' }}>
-                            <span style={{ fontSize: '.7rem' }}>Puntuación de usuario</span>
-                        </div>
+                <div className='row mt-2'>
+                    <div className='col-4'>
+                        <Grafico valor={rating} />
                     </div>
-                </div> */}
+                    <div className='col-6 position-absolute' style={{ left: '2.5vw', top: '5px', lineHeight: '.8' }}>
+                        <span style={{ fontSize: '.7rem' }}>Puntuación de usuario</span>
+                    </div>
+                </div>
+            </div> */}
             </div>
         </div>
+    }
+
+
+
+
+    return (
+        filter()
     )
 }
 

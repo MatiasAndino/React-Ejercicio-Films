@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Card from './card/Card'
-import useIndiceCarrusel from './indice/useIndiceCarrusel';
+import Card from '../../carrusel/card/Card';
+import useIndiceCarrusel from '../../carrusel/indice/useIndiceCarrusel';
 
-const Carrusel = ({ titulo, data, items, style }) => {
-
+const CarruselFavoritos = ({ titulo, data, items, style  }) => {
+    
     const { activeIndex, nextIndex, prevIndex, resetIndex } = useIndiceCarrusel();
     const [movies, setMovies] = useState(data);
     const [carouselContent, setCarouselContent] = useState({ items, content: [] });
@@ -14,25 +14,21 @@ const Carrusel = ({ titulo, data, items, style }) => {
     const total = movies.length;
     const iteraciones = Math.ceil(total / items);
     
-    
     function createElements() {
         const posicion = carouselContent.items * activeIndex;
-        const newMovieList = [...movies.slice(posicion), ...movies.slice(0, posicion)];
+        const diferencia = carouselContent.items - (movies.length % carouselContent.items);
+        const completarLista = diferencia > 0 ? [...Array(diferencia)].map(_ => null) : [];
+
+        const newMovieList = [...movies.slice(posicion), ...completarLista];
         const elements = [];
 
         for (let index = 0; index < iteraciones; index++) {
             const inicio = index * items;
             const fin = (index + 1) * items;
 
-            if ((index === iteraciones - 1) && (total % items !== 0)) {
-                const rest = (items - total % items);
-                const newInicio = inicio - rest;
-                elements.push(newMovieList.slice(newInicio));
-                break;
-            }
-
             elements.push(newMovieList.slice(inicio, fin));
         }
+        
         return {elements, newMovieList};
     }
 
@@ -48,7 +44,7 @@ const Carrusel = ({ titulo, data, items, style }) => {
                             movieList.map((media, i) => (
                                 <Card
                                     media={media}
-                                    key={media.id}
+                                    key={!!media ? media.id : Math.floor(Math.random())}
                                     posicion={i === 0 ? 'primero' : i === items - 1 ? 'ultimo' : ''}
                                 />
                             ))
@@ -62,6 +58,7 @@ const Carrusel = ({ titulo, data, items, style }) => {
     useEffect(() => {
 
         resetIndex();
+
         const {elements, newMovieList} = createElements();
 
         const updatedCarouselContent = updateCarousel(elements);
@@ -96,4 +93,4 @@ const Carrusel = ({ titulo, data, items, style }) => {
     )
 }
 
-export default Carrusel;
+export default CarruselFavoritos;

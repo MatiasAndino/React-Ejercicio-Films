@@ -6,10 +6,10 @@ export const FavoriteContext = createContext();
 
 export const FavoriteProvider = ({ children }) => {
 
-    const { includes, addItem, removeItem, clear } = useLocalStorage();
+    const { includes, addItem, removeItem, clear, favoriteItems } = useLocalStorage();
 
     return (
-        <FavoriteContext.Provider value={{ includes, addItem, removeItem, clear }}>
+        <FavoriteContext.Provider value={{ includes, addItem, removeItem, clear, favoriteItems }}>
             {children}
         </FavoriteContext.Provider>
     )

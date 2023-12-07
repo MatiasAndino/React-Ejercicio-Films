@@ -16,6 +16,7 @@ const useScreenWidth = () => {
     }
 
     useEffect(() => {
+
         window.addEventListener('resize', detectSize);
         
         return () => {

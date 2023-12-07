@@ -6,7 +6,7 @@ import useUpCommingMovies from '../../datasource/remote/tmdb/useUpCommingMovies'
 
 
 const CAROUSEL_ITEMS = 20;
-const Banner_ = ({ origen, media }) => {
+const Banner_ = ({ origen, media, items, style }) => {
 
   const { upcomingMovies, upcomingMoviesIsLoading } = useUpCommingMovies();
 
@@ -26,7 +26,7 @@ const Banner_ = ({ origen, media }) => {
           {
             condicional &&
             <div className="position-absolute w-100 bottom-0">
-              <ContenedorCarousel title={'Upcoming Movies'} data={upcomingMovies} mediaType={'movie'} />
+              <ContenedorCarousel title={'Upcoming Movies'} data={upcomingMovies} mediaType={'movie'} items={items} style={style} />
             </div>
           }
         </div >

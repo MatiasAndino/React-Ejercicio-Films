@@ -4,34 +4,32 @@ const useLocalStorage = () => {
 
     const storedItems = JSON.parse(localStorage.getItem('favorites'))
 
-    const [items, setItems] = useState(storedItems || []);
+    const [favoriteItems, setFavoriteItems] = useState(storedItems || []);
 
     useEffect(() => {
-        console.log(items)
-        localStorage.setItem('favorites', JSON.stringify(items));
-    }, [items])
+        localStorage.setItem('favorites', JSON.stringify(favoriteItems));
+    }, [favoriteItems])
 
 
     function includes(item) {
-
-        return items.some(element => element.id === item.id);
+        return favoriteItems.some(element => element.id === item.id);
     }
 
     function addItem(item) {
-        if (items.includes(item)) return;
-        setItems([...items, item]);
+        if (favoriteItems.includes(item)) return;
+        setFavoriteItems([...favoriteItems, item]);
     }
 
     function removeItem(item) {
-        const newArray = items.filter(element => element.id !== item.id);
-        setItems(newArray)
+        const newArray = favoriteItems.filter(element => element.id !== item.id);
+        setFavoriteItems(newArray)
     }
 
     function clear() {
-        setItems([]);
+        setFavoriteItems([]);
     }
 
-    return { includes, addItem, removeItem, clear }
+    return { includes, addItem, removeItem, clear, favoriteItems }
 }
 
 export default useLocalStorage
