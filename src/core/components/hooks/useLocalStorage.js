@@ -8,6 +8,7 @@ const useLocalStorage = () => {
 
     useEffect(() => {
         localStorage.setItem('favorites', JSON.stringify(favoriteItems));
+        
     }, [favoriteItems])
 
 

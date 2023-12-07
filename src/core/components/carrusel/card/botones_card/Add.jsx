@@ -16,9 +16,9 @@ const Add = ({ ...props }) => {
         else addItem(item)
     }
 
-    useEffect(() => {
+    // useEffect(() => {
         
-    },[currentState])
+    // },[currentState])
 
     return (
         <FontAwesomeIcon role='button' onClick={handleClick} icon={includes(item) ? faCheck : faAdd} />

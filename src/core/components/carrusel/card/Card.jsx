@@ -21,6 +21,7 @@ const Card = ({ media, posicion }) => {
         return <div
             className={`card border border-0 bg-dark ${posicion}`}
             style={{ visibility: 'hidden' }}
+            key={Math.random()}
         >
             <img
                 className='card-img-top'

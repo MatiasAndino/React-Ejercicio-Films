@@ -27,7 +27,7 @@ const Content = () => {
 
     const { items, style } = useScreenWidth();
 
-
+    
     return (
 
         <ContentModalProvider>
