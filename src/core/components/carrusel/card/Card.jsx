@@ -5,12 +5,13 @@ import CardButtonsContainer from './botones_card/CardButtonsContainer';
 import Grafico from './grafico/Grafico';
 import MediaGenres from '../../utilities/MediaGenres';
 import { useModalContext } from '../../context/ContentContext';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 
 const Card = ({ media, posicion }) => {
 
     const { setMedia } = useModalContext();
-    
+
     function updateMediaData() {
         setMedia(media);
     }
@@ -33,7 +34,11 @@ const Card = ({ media, posicion }) => {
                 style={{ zIndex: '2' }}
             />
             <div className="card-body bg-dark text-light">
-                <CardButtonsContainer />
+                <CardButtonsContainer>
+                    <CardButtonsContainer.AddButton
+                        item={media}
+                    />
+                </CardButtonsContainer>
 
                 <MediaGenres
                     genreIds={media.genreIds}

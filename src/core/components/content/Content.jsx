@@ -10,6 +10,7 @@ import useTopRatedTvs from '../../datasource/remote/tmdb/useTopRatedTvs'
 import useAiringTvs from '../../datasource/remote/tmdb/useAiringTvs'
 import Navbar from '../navbar/Navbar'
 import Modal from '../modal/Modal'
+import { FavoriteProvider } from '../../providers/FavoritesProvider'
 
 
 const ORIGEN = 'HomeView';
@@ -25,20 +26,22 @@ const Content = () => {
     return (
 
         <ContentModalProvider>
+            <FavoriteProvider>
 
-            <Navbar />
-            <Banner_ origen={ORIGEN} />
+                <Navbar />
+                <Banner_ origen={ORIGEN} />
 
-            {!topRatedMoviesIsLoading && <ContenedorCarousel title={'Top Rated Movies'} data={topRatedMovies} />}
-            {!popularMoviesIsLoading && <ContenedorCarousel title={'Popular Movies'} data={popularMovies} />}
-            {!popularTvIsLoading && <ContenedorCarousel title={'Popular Tv'} data={popularTv} />}
-            {!topRatedTvIsLoading && <ContenedorCarousel title={'Top Rated Tv'} data={topRatedTv} />}
-            {!airingTvIsLoading && <ContenedorCarousel title={'Airing Tv'} data={airingTv} />}
-            <Modal />
-            <div className='vw-25 h-100 fs-1 bg-dark text-center'>
-                {/* RELLENO */}
+                {!topRatedMoviesIsLoading && <ContenedorCarousel title={'Top Rated Movies'} data={topRatedMovies} />}
+                {!popularMoviesIsLoading && <ContenedorCarousel title={'Popular Movies'} data={popularMovies} />}
+                {!popularTvIsLoading && <ContenedorCarousel title={'Popular Tv'} data={popularTv} />}
+                {!topRatedTvIsLoading && <ContenedorCarousel title={'Top Rated Tv'} data={topRatedTv} />}
+                {!airingTvIsLoading && <ContenedorCarousel title={'Airing Tv'} data={airingTv} />}
+                <Modal />
+                <div className='vw-25 h-100 fs-1 bg-dark text-center'>
+                    {/* RELLENO */}
 
-            </div>
+                </div>
+            </FavoriteProvider>
 
         </ContentModalProvider>
 
