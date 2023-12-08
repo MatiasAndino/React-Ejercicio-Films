@@ -14,24 +14,27 @@ const CarruselFavoritos = ({ titulo, data, items, style }) => {
     const total = movies.length;
     const iteraciones = Math.ceil(total / items);
 
+
     function createElements() {
         const posicion = carouselContent.items * activeIndex;
         const diferencia = (iteraciones * carouselContent.items) - total;
         const completarLista = diferencia > 0 ? [...Array(diferencia)].map(_ => null) : [];
 
-        const newMovieList = [...movies.slice(posicion), ...completarLista];
+        // const newMovieList = [...movies.slice(posicion), ...completarLista];
+        const newMovieList = [...movies.slice(posicion), ...movies.slice(0, posicion),...completarLista];
         const elements = [];
+        
 
         for (let index = 0; index < iteraciones; index++) {
             const inicio = index * items;
             const fin = (index + 1) * items;
-
+            
             elements.push(newMovieList.slice(inicio, fin));
         }
-
+        
         return { elements, newMovieList };
     }
-
+    
     function updateCarousel(elements) {
         return elements.map((movieList, index) => {
             return (
@@ -39,36 +42,35 @@ const CarruselFavoritos = ({ titulo, data, items, style }) => {
                     <div
                         className='cards-wrapper align-items-center'
                         style={{ overflow: 'visible', ...style }}
-                        // key={Math.random()}
                     >
                         {
                             movieList.map((media, i) => (
                                 <Card
-                                    media={media}
+                                media={media}
                                     key={!!media ? media.id : Math.random()}
                                     posicion={i === 0 ? 'primero' : i === items - 1 ? 'ultimo' : ''}
                                 />
-                            ))
-                        }
+                                ))
+                            }
                     </div>
                 </div>
             )
         })
     }
-
+    
     useEffect(() => {
-
         resetIndex();
+
         const { elements, newMovieList } = createElements();
-
+        
         const updatedCarouselContent = updateCarousel(elements);
-
+        
         setCarouselContent({ items, content: updatedCarouselContent });
         setMovies(newMovieList);
-
+        
     }, [items])
-
-
+    
+    
     return (
         <div className="container-fluid">
             <div style={{ height: '30px' }}></div>

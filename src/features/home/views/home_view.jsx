@@ -3,7 +3,7 @@ import Content from '../../../core/components/content/Content';
 
 const HomeView = () => {
     return (
-        <Content />
+            <Content />
     )
 }
 

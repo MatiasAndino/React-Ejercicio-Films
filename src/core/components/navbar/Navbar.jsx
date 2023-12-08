@@ -2,8 +2,9 @@ import React from 'react'
 import logo from '../../../assets/netflix128.png'
 import LinkNavbar from './links/LinkNavbar';
 import { useAuth } from '../../auth/hook/use_auth';
+import Buscador from '../buscador/Buscador';
 
-const Navbar = () => {
+const Navbar = ({setTexto}) => {
     const { logout } = useAuth();
 
     return (
@@ -40,7 +41,8 @@ const Navbar = () => {
                             </ul>
                         </div>
                     </div>
-                    <div>
+                    <div className='d-flex'>
+                        <Buscador setTexto={setTexto}/>
                         <span className='text-light p-1'>Matts</span>
                         <button className='btn btn-danger' onClick={logout} >Logout</button>
                     </div>
