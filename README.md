@@ -1,4 +1,3 @@
-https://qa-react-ejercicio-films.vercel.app/
 
 # React + Vite
 
